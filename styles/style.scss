@@ -1,0 +1,219 @@
+/*css-reset*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
+
+$primary-color:#9356DC;
+$secondary-color:#FF79DA;
+$tertiary-color:#99E2D0;
+
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+
+    
+
+    h3{
+        font-size: 24px;
+        font-weight: bold;
+        margin-left: 3%;
+    }
+
+}
+
+header{
+    text-align: center;
+
+    .logo{
+        background-color: #ffffff;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        height: 100%;
+    }
+
+}
+
+
+.container--localisation{
+    background-color: #c5c5c5;
+    padding: 15px 0px;
+    text-align: center;
+
+}
+
+.container--lightgrey{
+    background-color: #f1f1f1;
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 60px;
+
+    h2{
+        font-size: 26px;
+        font-weight: bold;
+        text-align: center;
+        margin-left: 10%;
+        margin-right: 10%;  
+    }
+
+    p{
+        font-size: 20px;
+        margin-top: 20px;
+        text-align: center;
+        color: #000000b3;
+        margin-bottom: 40px;
+    }
+
+    button{
+
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin-left: 20%;
+        margin-right: 20%;
+        border-radius: 30px;
+        border: none;
+        background-color: $primary-color;
+        font-size: 16px;
+        font-weight: 500;
+        color: #ffffff;   
+        box-shadow: 2px 5px 8px 0px #a8a8a8; 
+    }
+
+
+
+}
+
+.container--white{
+    display: flex;
+    flex-direction: column;
+    margin-top: 0px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    h2{
+        margin-bottom: 18px;
+    }
+
+    button{
+        margin: 0px 10%;
+        margin-top: 20px;
+        padding: 25px 0px;
+        padding-right: 25px;
+        font-size: 15px;
+        font-weight: bold;
+        display: flex;
+        justify-content: space-evenly;
+        border-radius: 20px;
+        border:none;
+        background-color: #f2f2f2;
+        box-shadow: 2px 5px 8px 0px #e0e0e0; 
+
+        i{
+            color: grey;
+            font-size: 18px;
+        }
+        
+    }
+}
+
+.container__menu{
+    padding: 45px 10px;
+    background-color: #f2f2f2;
+
+        .card{
+            margin: 20px 10px;
+            background-color: #ffffff;
+            height: 190px;
+            border-radius: 10px;
+            padding-bottom: 25px;
+            box-shadow: 2px 5px 8px 0px #e0e0e0; 
+
+            img{
+                width: 100%;
+                height: 78%;
+                object-fit: cover;
+                border-top-left-radius:10px ;
+                border-top-right-radius: 10px;
+            }
+
+            .card__description{
+                margin-left: 15px;
+                margin-top: 10px;
+                display: flex;
+                justify-content: space-between;
+
+                .description--resto{
+                    h4{
+                        font-size: 18px;
+                        font-weight: bold;
+                    }
+                    p{
+                        font-size: 16px;
+                        margin-top:3px;
+                    }
+                }
+
+                i{
+                    font-size: 23px;
+                    margin-right: 22px;
+                    margin-top: 5px;
+                    color: #4e4e4ee7;
+                }
+            }
+        }
+}
+
+.footer__list{
+    background-color: #3c3d41;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+    line-height: 25px;
+    padding-bottom: 40px;
+    color: #ffffff;
+    
+
+   h1{
+        font-family: 'Shrikhand-Regular';
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+   i{
+       width: 20px;
+       height: 20px;
+       margin-right: 2%;
+       color: #ffffff;
+   }
+
+   .contact{
+       color: #ffffff;
+   }
+
+}
