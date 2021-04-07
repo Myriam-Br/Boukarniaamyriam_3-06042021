@@ -25,11 +25,11 @@ a {
   color: black;
 }
 
-body {
+body:not(h1) {
   font-family: 'Roboto', sans-serif;
 }
 
-body h3 {
+body:not(h1) h3 {
   font-size: 24px;
   font-weight: bold;
   margin-left: 3%;
@@ -37,24 +37,37 @@ body h3 {
 
 header {
   text-align: center;
+  margin-bottom: 0px;
+  -webkit-box-shadow: #a0a0a0 0px 1px 8px 1px;
+          box-shadow: #a0a0a0 0px 1px 8px 1px;
+  position: relative;
+  padding-bottom: 8px;
 }
 
 header .logo {
   background-color: #ffffff;
   padding-top: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 2px;
   height: 100%;
+  width: 230px;
 }
 
 .container--localisation {
-  background-color: #c5c5c5;
-  padding: 15px 0px;
+  background-color: #e4e4e4;
+  padding: 20px 0px;
   text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  color: #363636;
+}
+
+.container--localisation .city {
+  margin-left: 10px;
 }
 
 .container--lightgrey {
   background-color: #f1f1f1;
-  padding-top: 30px;
+  padding-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -66,8 +79,8 @@ header .logo {
 }
 
 .container--lightgrey h2 {
-  font-size: 26px;
-  font-weight: bold;
+  font-size: 30px;
+  font-weight: 800;
   text-align: center;
   margin-left: 10%;
   margin-right: 10%;
@@ -88,15 +101,37 @@ header .logo {
   margin-right: 20%;
   border-radius: 30px;
   border: none;
-  background-color: #9356DC;
-  font-size: 16px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#FF79DA), to(#9356DC));
+  background-image: linear-gradient(#FF79DA, #9356DC);
+  font-size: 18px;
   font-weight: 500;
   color: #ffffff;
   -webkit-box-shadow: 2px 5px 8px 0px #a8a8a8;
           box-shadow: 2px 5px 8px 0px #a8a8a8;
+  position: relative;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 800ms;
+  transition: all 800ms;
+}
+
+.container--lightgrey button:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+  -webkit-transition-timing-function: ease-in;
+          transition-timing-function: ease-in;
 }
 
 .container--white {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.container--white h3 {
+  margin-bottom: 40px;
+}
+
+.container--white .btn__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -104,46 +139,57 @@ header .logo {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: 0px;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2px;
 }
 
-.container--white h2 {
-  margin-bottom: 18px;
-}
-
-.container--white button {
-  margin: 0px 10%;
-  margin-top: 20px;
-  padding: 25px 0px;
-  padding-right: 25px;
-  font-size: 15px;
+.container--white .btn__container button {
+  width: 80%;
+  padding: 30px 20px;
+  padding-right: 30px;
   font-weight: bold;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  border-radius: 20px;
+  border-radius: 30px;
   border: none;
   background-color: #f2f2f2;
-  -webkit-box-shadow: 2px 5px 8px 0px #e0e0e0;
-          box-shadow: 2px 5px 8px 0px #e0e0e0;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 3px 6px 8px 1px rgba(128, 128, 128, 0.3);
+          box-shadow: 3px 6px 8px 1px rgba(128, 128, 128, 0.3);
 }
 
-.container--white button i {
+.container--white .btn__container button i {
   color: grey;
+  font-size: 20px;
+  margin-right: 25px;
+}
+
+.container--white .btn__container button .item {
   font-size: 18px;
 }
 
+.container--white .btn__container button:hover {
+  background-color: rgba(147, 86, 220, 0.1);
+  -webkit-box-shadow: 3px 6px 8px 1px rgba(128, 128, 128, 0.5);
+          box-shadow: 3px 6px 8px 1px rgba(128, 128, 128, 0.5);
+}
+
+.container--white .btn__container button:hover i {
+  color: #9356DC;
+}
+
 .container__menu {
-  padding: 45px 10px;
+  padding: 60px 10px;
   background-color: #f2f2f2;
 }
 
-.container__menu .card {
+.container__menu .card__description {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container__menu .card__description .card {
   margin: 20px 10px;
   background-color: #ffffff;
   height: 190px;
@@ -153,7 +199,7 @@ header .logo {
           box-shadow: 2px 5px 8px 0px #e0e0e0;
 }
 
-.container__menu .card img {
+.container__menu .card__description .card img {
   width: 100%;
   height: 78%;
   -o-object-fit: cover;
@@ -162,32 +208,43 @@ header .logo {
   border-top-right-radius: 10px;
 }
 
-.container__menu .card .card__description {
-  margin-left: 15px;
-  margin-top: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.container__menu .card .card__description .description--resto h4 {
+.container__menu .card__description .card .description--resto h4 {
   font-size: 18px;
   font-weight: bold;
-}
-
-.container__menu .card .card__description .description--resto p {
-  font-size: 16px;
-  margin-top: 3px;
-}
-
-.container__menu .card .card__description i {
-  font-size: 23px;
-  margin-right: 22px;
+  margin-left: 20px;
   margin-top: 5px;
-  color: #4e4e4ee7;
+}
+
+.container__menu .card__description .card .description--resto p {
+  font-size: 16px;
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+.container__menu .card__description button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: none;
+  position: absolute;
+  background-color: transparent;
+  right: 0;
+  margin-top: 180px;
+  margin-right: 40px;
+  text-decoration: none;
+}
+
+.container__menu .card__description button i {
+  font-size: 24px;
+}
+
+.container__menu .card__description button .on {
+  position: absolute;
+  color: transparent;
+}
+
+.container__menu .card__description button .on:hover {
+  color: #9356DC;
 }
 
 .footer__list {
@@ -206,9 +263,8 @@ header .logo {
 }
 
 .footer__list h1 {
-  font-family: 'Shrikhand-Regular';
+  font-family: 'Shrikhand';
   font-size: 25px;
-  font-weight: bold;
   margin-bottom: 20px;
 }
 
