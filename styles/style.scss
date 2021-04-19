@@ -41,15 +41,20 @@ header{
             padding:15px;
             text-align: center;
             box-shadow: 1px 2px 8px 2px rgb(3, 3, 3);
-            
-            i{
+            button{
+                height: 50px;
+                width: 50px;
+                border: none;
                 position: absolute;
+                background-color: #f2f2f2;
                 left: 0;
                 top: 0;
-                padding-left: 20px;
-                padding-top: 25px;
+                margin-top: 10px;
+                margin-left: 10px;
+            i{
                 font-size: 20px;
             }
+        }
             .logo--black{
                 font-family: 'Shrikhand', cursive;
                 font-size: 25px;
@@ -71,83 +76,53 @@ header{
     }
 }
 
-@mixin card{
-    background-color: #ffffff;
-    margin-top: 18px;
-    display: flex;
-    border-radius: 10px;
-    overflow: hidden;
-    width: 80%;
- 
-}
-@mixin dish{
-    width: 75%;
-    background-color: blueviolet;
-    margin: 4px;
-    transition: all 1s;
-}
-@mixin dish-h4 {
-    font-size: 18px;
-    font-weight: bold;   
-}
-
-@mixin dish-p {
-    text-overflow: ellipsis;
-}
-
-@mixin price {
-    background-color: brown;
-    padding-top: 20px;  
-    margin-right: 5px;
-    transform: translateX(100%);
-    transition: all 1s;
-}
-
-@mixin checked {
-    background-color: chartreuse;
-        padding-top: 20px;
-        text-align: center;
-        width: 80px; 
-        transform: translateX(100%);
-        transition: all 1s;
-}
-
-@mixin checked-icon{
-    color: #ffffff;  
-    transform: rotateX(0deg);   
-    transition: all 1s;
-}
 
 section{
-    padding: 25px 15px;
-    background-color: rgb(255, 255, 255);
+    padding: 25px 20px;
+    background-color: #f0f0f0;
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
     margin-top: 210px;
     .restaurant{
         display: flex;
         justify-content: space-between;
+        margin-top: 10px;
+        
         h2{
             font-family: 'Shrikhand',cursive;
             font-size: 22px;
         }
-        i{
+        button{
             position: absolute;
-            right: 0;
+            background-color: #f0f0f0;
+            right: 0; 
             margin-right: 20px;
+            height: 30px;
+            width: 40px;
+            border: none;
+
+        i{
             font-size: 22px;
+            margin-top: 2px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
         }
+        }
+       
     }
     .menu{
-        background-color: rgb(255, 255, 255);
+        background-color: #f0f0f0;
         .item{
             padding-top: 20px;
             padding-bottom: 20px;
             h3{
-                font-size: 18px;
+                font-size: 16px;
                 width: 50px;
                 padding-bottom: 2px;
-                border-bottom:#6dda7c solid 2px;
+                border-bottom:#6ddab9 solid 2px;
             }
             .container--cards{
 
@@ -155,9 +130,11 @@ section{
                     background-color: #ffffff;
                     margin-top: 18px;
                     display: flex;
-                    border-radius: 10px;
                     overflow: hidden;
-                    width: 80%;
+                    border-radius: 10px;
+                    justify-content: space-between;
+                    width: 100%;
+                    height: fit-content;
                     box-shadow: 2px 1px 8px 2px rgba(0, 0, 0,0.2);
                     &::after{
                         content: '';
@@ -170,62 +147,82 @@ section{
                         height: 80px;
                     }
                    
-              
-                   &--dish{
-                        width: 75%;
-                        margin: 4px;
+                   &--dish{  
+                       width: 75%;
+                        padding-left: 10px;
+                        padding-top: 10px;
+                        padding-bottom: 5px;
                         transition: all 800ms;
-                    
+                                        
                       h4{
-                        font-size: 18px;
-                        font-weight: bold;   
+                        font-size: 16px;
+                        margin-bottom: 5px;
+                        font-weight: bold;  
                       }
-                      p{
+
+                      p{  
+                        font-size: 15px;
                         text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;  
                       }
                    }
-                    &--price{
-                            padding-top: 20px;  
-                            margin-right: 5px;
-                            transform: translateX(100%);
-                            transition: all 800ms;
-                    }
-                    &--checked{
-                            background-color: rgb(109, 218, 124);
-                            padding-top: 18px;
-                            text-align: center;
-                            width: 80px; 
-                            transform: translateX(100%);
-                            transition: all 800ms;
-                        
-                        i{
-                            color: #ffffff;  
-                            font-size: 22px;
-                            transform: rotateX(0deg);   
-                            transition: all 800ms;
+
+                   .right{
+                       display: flex;       
+                       transform: translateX(60px);
+                       transition: all 800ms;   
+
+                        &--price{
+                                
+                                margin-right: 15px;
+                                font-size: 14px;
+                                padding-top: 30px;
+                                font-weight: bold;        
                         }
-                    }  
-                          
+
+                        &--checked{
+                                background-color: #6ddab9;
+                                text-align: center;
+                                width: 60px;
+                               
+                            i{
+                                color: #ffffff;
+                               margin-top:25%;
+                               font-size: 22px;
+                                transform: rotateX(0deg);   
+                                transition: all 800ms;
+                            }
+                        }      
+                   }
+                    
                 }
+              
                 .card:hover{
                     .card--dish{
-                      width: 70%;
+                      width: 60%;
                       transition: all 800ms;
+                      
+                      p{
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                      }
                        
                     }
-                    .card--price{
-                        transform: translateX(0%);
+                    .right{
+                        transform: translateX(0px);
                         transition: all 800ms;
-                    }
-                    .card--checked{
-                        transform: translateX(0%);
-                        transition: all 800ms;
-                        i{
-                            transform: rotate(360deg);
-                            transition: all 800ms;
+                        
+                        .right--checked{
+                            
+                            i{
+                                transform: rotate(360deg);
+                                transition: all 800ms;
+                            }
                         }
                     }
-                }      
+                }    
 
                 /*animation des cartes au hover*/
                 .first{
@@ -247,6 +244,7 @@ section{
                     }
                 }            
     }
+    
 
 /* keyframes pour les animations apparitions en cascade */
     @keyframes slide-in {
@@ -278,26 +276,37 @@ section{
         box-shadow: 2px 1px 8px 2px rgba(0, 0, 0,0.2);
         }       
     }
-    
+        }
+    }
 
 
-    .btn{
+/*boutton commander*/
+
+ .btn{
         text-align: center;
-        background-color: crimson;
-        button{
+        padding-top: 30px;
+        padding-bottom: 50px;
+        transition: all 800ms;
+        .commander{
             border: none;
             font-family: 'Roboto';
+            color: #ffffff;
             font-size: 18px;
-            padding: 18px;
+            padding: 15px 60px;
             border-radius: 30px;
+            box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.5);
+            background-image: linear-gradient(0deg, $primary-color, $secondary-color);
+
+        &:hover{
+            box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.6); 
+            background-image: linear-gradient(0deg, #9256dce7, #ff79d9e7);
+              
+            
+        }
         }
     }
 
-        }
-    }
 }
-
-
 footer{
     background-color: rgb(49, 49, 49);
     padding: 20px;
@@ -305,24 +314,25 @@ footer{
 
     .logo--white{
         font-family: 'Shrikhand', cursive;
-        font-size: 20px;
-        margin-bottom: 10px;
+        font-size: 18px;
+        margin-bottom: 15px;
         color: #ffffff;
     }
     .footer__description{
-        font-size: 15px;
+        font-size: 14px;
+     
        
 
         .description{
-            line-height: 20px; 
+            line-height: 22px; 
             color: #ffffff;
 
             .hands{
-               font-size: 16px;
+               font-size: 14px;
             }
             .ustensils{
                 margin-right: 5px;
-                font-size: 18px;
+                font-size: 16px;
             }
         }
     }

@@ -37,12 +37,19 @@ header .container--text {
           box-shadow: 1px 2px 8px 2px #030303;
 }
 
-header .container--text i {
+header .container--text button {
+  height: 50px;
+  width: 50px;
+  border: none;
   position: absolute;
+  background-color: #f2f2f2;
   left: 0;
   top: 0;
-  padding-left: 20px;
-  padding-top: 25px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+header .container--text button i {
   font-size: 20px;
 }
 
@@ -66,11 +73,12 @@ header .container--image img {
 }
 
 section {
-  padding: 25px 15px;
-  background-color: white;
+  padding: 25px 20px;
+  background-color: #f0f0f0;
   border-top-left-radius: 35px;
   border-top-right-radius: 35px;
   margin-top: 210px;
+  /*boutton commander*/
 }
 
 section .restaurant {
@@ -80,6 +88,7 @@ section .restaurant {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-top: 10px;
 }
 
 section .restaurant h2 {
@@ -87,15 +96,28 @@ section .restaurant h2 {
   font-size: 22px;
 }
 
-section .restaurant i {
+section .restaurant button {
   position: absolute;
+  background-color: #f0f0f0;
   right: 0;
   margin-right: 20px;
+  height: 30px;
+  width: 40px;
+  border: none;
+}
+
+section .restaurant button i {
   font-size: 22px;
+  margin-top: 2px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
 section .menu {
-  background-color: white;
+  background-color: #f0f0f0;
 }
 
 section .menu .item {
@@ -105,10 +127,10 @@ section .menu .item {
 }
 
 section .menu .item h3 {
-  font-size: 18px;
+  font-size: 16px;
   width: 50px;
   padding-bottom: 2px;
-  border-bottom: #6dda7c solid 2px;
+  border-bottom: #6ddab9 solid 2px;
 }
 
 section .menu .item .container--cards {
@@ -121,9 +143,15 @@ section .menu .item .container--cards .card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  border-radius: 10px;
   overflow: hidden;
-  width: 80%;
+  border-radius: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   -webkit-box-shadow: 2px 1px 8px 2px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 1px 8px 2px rgba(0, 0, 0, 0.2);
 }
@@ -141,42 +169,52 @@ section .menu .item .container--cards .card::after {
 
 section .menu .item .container--cards .card--dish {
   width: 75%;
-  margin: 4px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 5px;
   -webkit-transition: all 800ms;
   transition: all 800ms;
 }
 
 section .menu .item .container--cards .card--dish h4 {
-  font-size: 18px;
+  font-size: 16px;
+  margin-bottom: 5px;
   font-weight: bold;
 }
 
 section .menu .item .container--cards .card--dish p {
+  font-size: 15px;
   text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-section .menu .item .container--cards .card--price {
-  padding-top: 20px;
-  margin-right: 5px;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+section .menu .item .container--cards .card .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateX(60px);
+          transform: translateX(60px);
   -webkit-transition: all 800ms;
   transition: all 800ms;
 }
 
-section .menu .item .container--cards .card--checked {
-  background-color: #6dda7c;
-  padding-top: 18px;
+section .menu .item .container--cards .card .right--price {
+  margin-right: 15px;
+  font-size: 14px;
+  padding-top: 30px;
+  font-weight: bold;
+}
+
+section .menu .item .container--cards .card .right--checked {
+  background-color: #6ddab9;
   text-align: center;
-  width: 80px;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-  -webkit-transition: all 800ms;
-  transition: all 800ms;
+  width: 60px;
 }
 
-section .menu .item .container--cards .card--checked i {
+section .menu .item .container--cards .card .right--checked i {
   color: #ffffff;
+  margin-top: 25%;
   font-size: 22px;
   -webkit-transform: rotateX(0deg);
           transform: rotateX(0deg);
@@ -185,26 +223,25 @@ section .menu .item .container--cards .card--checked i {
 }
 
 section .menu .item .container--cards .card:hover .card--dish {
-  width: 70%;
+  width: 60%;
   -webkit-transition: all 800ms;
   transition: all 800ms;
 }
 
-section .menu .item .container--cards .card:hover .card--price {
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
+section .menu .item .container--cards .card:hover .card--dish p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+section .menu .item .container--cards .card:hover .right {
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
   -webkit-transition: all 800ms;
   transition: all 800ms;
 }
 
-section .menu .item .container--cards .card:hover .card--checked {
-  -webkit-transform: translateX(0%);
-          transform: translateX(0%);
-  -webkit-transition: all 800ms;
-  transition: all 800ms;
-}
-
-section .menu .item .container--cards .card:hover .card--checked i {
+section .menu .item .container--cards .card:hover .right .right--checked i {
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
   -webkit-transition: all 800ms;
@@ -303,17 +340,32 @@ section .menu .item .container--cards .third::after {
   }
 }
 
-section .menu .item .btn {
+section .btn {
   text-align: center;
-  background-color: crimson;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  -webkit-transition: all 800ms;
+  transition: all 800ms;
 }
 
-section .menu .item .btn button {
+section .btn .commander {
   border: none;
   font-family: 'Roboto';
+  color: #ffffff;
   font-size: 18px;
-  padding: 18px;
+  padding: 15px 60px;
   border-radius: 30px;
+  -webkit-box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.5);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
+  background-image: linear-gradient(0deg, #9356DC, #FF79DA);
+}
+
+section .btn .commander:hover {
+  -webkit-box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.6);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#9256dce7), to(#ff79d9e7));
+  background-image: linear-gradient(0deg, #9256dce7, #ff79d9e7);
 }
 
 footer {
@@ -323,26 +375,26 @@ footer {
 
 footer .logo--white {
   font-family: 'Shrikhand', cursive;
-  font-size: 20px;
-  margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 15px;
   color: #ffffff;
 }
 
 footer .footer__description {
-  font-size: 15px;
+  font-size: 14px;
 }
 
 footer .footer__description .description {
-  line-height: 20px;
+  line-height: 22px;
   color: #ffffff;
 }
 
 footer .footer__description .description .hands {
-  font-size: 16px;
+  font-size: 14px;
 }
 
 footer .footer__description .description .ustensils {
   margin-right: 5px;
-  font-size: 18px;
+  font-size: 16px;
 }
 /*# sourceMappingURL=style.css.map */
