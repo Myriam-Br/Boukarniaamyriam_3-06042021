@@ -77,12 +77,121 @@ header{
 }
 
 
+
+@mixin card-style{
+    background-color: #ffffff;
+    margin-top: 18px;
+    display: flex; 
+    border-radius: 10px;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    box-shadow: 2px 1px 8px 2px rgba(0, 0, 0,0.2);
+}
+
+@mixin card-style-after{
+    content: '';
+    position: absolute;
+    right: 0;
+    opacity: 0;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: 80px;
+}
+
+@mixin dish-style{
+    width: 85%;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+   
+}
+
+@mixin dish-style-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;  
+}
+@mixin dish-style-paragraph{
+    font-size: 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+}
+@mixin dish-style-paragraph-hov{
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@mixin right-side{
+    display: flex;  
+    background-color: aquamarine;
+      
+  
+}
+
+@mixin right-side-price{
+    font-size: 14px;
+    padding-top: 35px;
+    font-weight: bold; 
+    transition: all 800ms;           
+}
+
+@mixin right-side-check{
+    background-color: #6ddab9;
+    text-align: center;
+    
+}
+
+@mixin right-side-iconV{
+    color: #ffffff; 
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 32%;
+    font-size: 22px;
+    transform: rotateX(0deg);  
+}
+/* animations apparitions en cascade */
+    @keyframes slide-in {
+        0%{
+            transform: translateY(12px);
+        }
+     
+        100%{
+            transform: translateY(0px);
+        }     
+    }
+    
+    @keyframes fade-out {
+    0%{
+        opacity: 1;
+    }
+  
+    100%{
+        opacity: 0;
+    }    
+  
+        
+    }
+    @keyframes shadow-b {
+        from{
+           box-shadow: none; 
+        }
+        to{
+        box-shadow: 2px 1px 8px 2px rgba(0, 0, 0,0.2);
+        }       
+    }
 section{
     padding: 25px 20px;
     background-color: #f0f0f0;
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
     margin-top: 210px;
+
+   
     .restaurant{
         display: flex;
         justify-content: space-between;
@@ -114,10 +223,13 @@ section{
        
     }
     .menu{
-        background-color: #f0f0f0;
+        background-color: #f0f0f0;  
         .item{
             padding-top: 20px;
             padding-bottom: 20px;
+            
+           
+              
             h3{
                 font-size: 16px;
                 width: 50px;
@@ -125,96 +237,78 @@ section{
                 border-bottom:#6ddab9 solid 2px;
             }
             .container--cards{
-
+                margin-right: 25px;
+                width: 100%;
+              
                 .card{
-                    background-color: #ffffff;
-                    margin-top: 18px;
-                    display: flex;
+                    @include card-style;
                     overflow: hidden;
-                    border-radius: 10px;
-                    justify-content: space-between;
-                    width: 100%;
-                    height: fit-content;
-                    box-shadow: 2px 1px 8px 2px rgba(0, 0, 0,0.2);
+                    
                     &::after{
-                        content: '';
-                        position: absolute;
-                        right: 0;
-                        left: 0;
-                        opacity: 0;
-                        background-color: rgb(255, 255, 255);
-                        width: 100%;
-                        height: 80px;
+                        @include card-style-after;
                     }
+                    
+                    &--dish{  
+                    @include dish-style;
+                    transition: all 800ms;
                    
-                   &--dish{  
-                       width: 75%;
-                        padding-left: 10px;
-                        padding-top: 10px;
-                        padding-bottom: 5px;
-                        transition: all 800ms;
-                                        
-                      h4{
-                        font-size: 16px;
-                        margin-bottom: 5px;
-                        font-weight: bold;  
-                      }
+                        h4{
+                        @include dish-style-title;
+                        }
 
-                      p{  
-                        font-size: 15px;
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        overflow: hidden;  
-                      }
-                   }
+                        p{  
+                        @include dish-style-paragraph;
+                        transition: all 800ms; 
+                        }   
+                }
 
-                   .right{
-                       display: flex;       
-                       transform: translateX(60px);
-                       transition: all 800ms;   
-
+                    .right{
+                        @include right-side;
+                        width: 35px;   
+                        transition: all 800ms;  
+                        
                         &--price{
-                                
-                                margin-right: 15px;
-                                font-size: 14px;
-                                padding-top: 30px;
-                                font-weight: bold;        
+                            @include right-side-price;          
                         }
 
                         &--checked{
-                                background-color: #6ddab9;
-                                text-align: center;
-                                width: 60px;
-                               
+                            @include right-side-check; 
+                            width: 80px;  
+                            transform: translateX(30px);
+                            transition: all 800ms;   
+                                    
                             i{
-                                color: #ffffff;
-                               margin-top:25%;
-                               font-size: 22px;
-                                transform: rotateX(0deg);   
+                                @include right-side-iconV;
                                 transition: all 800ms;
                             }
                         }      
-                   }
-                    
-                }
-              
-                .card:hover{
-                    .card--dish{
-                      width: 60%;
-                      transition: all 800ms;
-                      
-                      p{
-                        text-overflow: ellipsis;
-                        white-space: nowrap;
-                        overflow: hidden;
-                      }
-                       
                     }
-                    .right{
-                        transform: translateX(0px);
+                    
+                }  
+                .card:hover{
+                   
+                    .card--dish{
+                        width: 65%;
                         transition: all 800ms;
                         
+                        p{
+                        @include dish-style-paragraph-hov;
+                        transition: all 800ms;
+                        }
+                        
+                    }
+                    .right{
+                        width: 90px;
+                        transition: all 800ms;   
+                        .right--price{
+                            margin-right: 15px;
+                            transition: all 800ms;   
+                        }
+                        
                         .right--checked{
+                            transform: translateX(0px);
+                            transition: all 800ms;    
+                                
                             
                             i{
                                 transform: rotate(360deg);
@@ -223,7 +317,7 @@ section{
                         }
                     }
                 }    
-
+                  
                 /*animation des cartes au hover*/
                 .first{
                     animation: slide-in 1s ease-out 50ms, shadow-b 1s ;
@@ -244,41 +338,11 @@ section{
                     }
                 }            
     }
-    
-
-/* keyframes pour les animations apparitions en cascade */
-    @keyframes slide-in {
-        0%{
-            transform: translateY(12px);
-        }
-     
-        100%{
-            transform: translateY(0px);
-        }     
-    }
-    
-    @keyframes fade-out {
-    0%{
-        opacity: 1;
-    }
-  
-    100%{
-        opacity: 0;
-    }    
-  
         
+        }   
+      
+      
     }
-    @keyframes shadow-b {
-        from{
-           box-shadow: none; 
-        }
-        to{
-        box-shadow: 2px 1px 8px 2px rgba(0, 0, 0,0.2);
-        }       
-    }
-        }
-    }
-
 
 /*boutton commander*/
 
@@ -299,8 +363,7 @@ section{
 
         &:hover{
             box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.6); 
-            background-image: linear-gradient(0deg, #9256dce7, #ff79d9e7);
-              
+            background-image: linear-gradient(0deg, #9256dce7, #ff79d9e7);        
             
         }
         }
@@ -339,4 +402,54 @@ footer{
 
   
 }
+
+@media screen and (min-width:1000px) {
+
+    .restaurant{
+        margin-bottom: 30px;
+        justify-content: center;
+      
+    }
+
+    .menu{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+       
+        .item{
+           background-color: sandybrown;
+           width: 100%;
+           .container--cards{
+               
+            .card{   
+               
+              background-color: violet;
+                &::after{
+                    display: none;
+
+                .right{
+                   width: 80px;
+                   &--price{
+                    
+                   }
+                    &--checked{
+                        width: 100px;
+                        margin: 0px;
+                       
+                    }
+
+                }
+                }
+            }
+        }
+      
+        
+        }
+        
+
+       
+    }
+}
+
+
 
