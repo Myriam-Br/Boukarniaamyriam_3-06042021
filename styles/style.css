@@ -37,19 +37,19 @@ header .container--text {
           box-shadow: 1px 2px 8px 2px #030303;
 }
 
-header .container--text button {
+header .container--text .button {
   height: 50px;
   width: 50px;
   border: none;
   position: absolute;
-  background-color: #f2f2f2;
+  background-color: none;
   left: 0;
   top: 0;
-  margin-top: 10px;
+  margin-top: 26px;
   margin-left: 10px;
 }
 
-header .container--text button i {
+header .container--text .button i {
   font-size: 20px;
 }
 
@@ -72,6 +72,260 @@ header .container--image img {
      object-fit: cover;
 }
 
+footer {
+  background-color: #313131;
+  padding: 20px;
+}
+
+footer .logo--white {
+  font-family: 'Shrikhand', cursive;
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+footer .footer__description {
+  font-size: 14px;
+}
+
+footer .footer__description .description {
+  line-height: 25px;
+  color: #ffffff;
+}
+
+footer .footer__description .description .hands {
+  font-size: 14px;
+}
+
+footer .footer__description .description .ustensils {
+  margin-right: 5px;
+  font-size: 16px;
+}
+
+/*STYLES PAGE ACCUEIL START*/
+/* localisation fait partie de la section header*/
+.localisation {
+  background-color: #e4e3e3;
+  padding: 12px;
+  color: #242424;
+  text-align: center;
+}
+
+.localisation i {
+  font-size: 15px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-right: 150px;
+}
+
+.localisation .city {
+  margin-top: 50px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.search {
+  background-color: #f2f2f2;
+  text-align: center;
+  padding: 30px 30px;
+}
+
+.search h2 {
+  font-size: 27px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.search p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.search button {
+  margin-bottom: 30px;
+  border: none;
+  font-family: 'Roboto';
+  color: #ffffff;
+  font-size: 17px;
+  padding: 15px 25px;
+  border-radius: 30px;
+  -webkit-box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.5);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#9356DC), to(#FF79DA));
+  background-image: linear-gradient(0deg, #9356DC, #FF79DA);
+}
+
+.search button:hover {
+  -webkit-box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.6);
+          box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.6);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#9256dce7), to(#ff79d9e7));
+  background-image: linear-gradient(0deg, #9256dce7, #ff79d9e7);
+}
+
+.fonctionnement {
+  padding: 30px 25px;
+  padding-top: 45px;
+}
+
+.fonctionnement h3 {
+  font-size: 27px;
+  font-weight: bold;
+  color: black;
+}
+
+.fonctionnement .btn__container {
+  text-align: center;
+  padding: 25px 0px;
+}
+
+.fonctionnement .btn__container button {
+  border: none;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  width: 100%;
+  background-color: #f2f2f2;
+  font-size: 17px;
+  font-weight: bold;
+  position: relative;
+  border-radius: 18px;
+  -webkit-box-shadow: 3px 3px 8px 2px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 3px 8px 2px rgba(0, 0, 0, 0.2);
+}
+
+.fonctionnement .btn__container button .number {
+  background-color: #9356DC;
+  color: #ffffff;
+  padding: 3px 8px;
+  padding-top: 5px;
+  font-weight: normal;
+  font-size: 16px;
+  border-radius: 30px;
+  position: absolute;
+  left: 0;
+  margin-left: -10px;
+}
+
+.fonctionnement .btn__container button i {
+  font-size: 20px;
+  color: #727272;
+  margin-left: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-right: 260px;
+}
+
+.fonctionnement .btn__container button .step {
+  margin-left: 15px;
+}
+
+.fonctionnement .btn__container button .first {
+  margin-left: 30px;
+}
+
+.fonctionnement .btn__container button:hover {
+  background-color: #eee0ff;
+}
+
+.fonctionnement .btn__container button:hover i {
+  color: #9356DC;
+}
+
+.restaurants {
+  background-color: #f2f2f2;
+  padding: 30px 25px;
+}
+
+.restaurants h3 {
+  font-size: 27px;
+  font-weight: bold;
+  color: black;
+}
+
+.restaurants .card__description {
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.restaurants .card__description .card {
+  position: relative;
+  background-color: #ffffff;
+  height: 230px;
+  border-radius: 14px;
+  padding-bottom: 20px;
+  -webkit-box-shadow: 3px 2px 8px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 3px 2px 8px 1px rgba(0, 0, 0, 0.2);
+}
+
+.restaurants .card__description .card .card__image {
+  height: 80%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.restaurants .card__description .card .description--resto {
+  margin: 8px;
+  margin-left: 10px;
+}
+
+.restaurants .card__description .card .description--resto h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.restaurants .card__description .card .description--resto p {
+  margin-top: 2px;
+}
+
+.restaurants .card__description .card .nouveau {
+  background-color: #99E2D0;
+  position: absolute;
+  right: 0;
+  margin: 12px;
+  padding: 8px 15px;
+  border-radius: 2px;
+  color: #009569;
+  font-weight: bold;
+  -webkit-box-shadow: 1px 1px 1px 0px #99E2D0;
+          box-shadow: 1px 1px 1px 0px #99E2D0;
+}
+
+.restaurants .card__description button {
+  height: 30px;
+  width: 60px;
+  border: none;
+  background-color: #ffffff;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 220px;
+  margin-right: 5px;
+}
+
+.restaurants .card__description button .on {
+  font-size: 22px;
+  margin-top: 6px;
+  position: absolute;
+  color: transparent;
+}
+
+.restaurants .card__description button .on:hover {
+  color: #9356DC;
+}
+
+.restaurants .card__description button .off {
+  font-size: 22px;
+  margin-top: 6px;
+}
+
+/*STYLES PAGE ACCUEIL START*/
+/*STYLES PAGES MENU START*/
 /* animations apparitions en cascade */
 @-webkit-keyframes slide-in {
   0% {
@@ -171,11 +425,17 @@ section .restaurant button {
 section .restaurant button i {
   font-size: 22px;
   margin-top: 2px;
+}
+
+section .restaurant button .fill {
   position: absolute;
-  top: 0;
-  bottom: 0;
   right: 0;
   left: 0;
+  color: transparent;
+}
+
+section .restaurant button .fill:hover {
+  color: #9356DC;
 }
 
 section .menu {
@@ -392,36 +652,7 @@ section .btn .commander:hover {
   background-image: linear-gradient(0deg, #9256dce7, #ff79d9e7);
 }
 
-footer {
-  background-color: #313131;
-  padding: 20px;
-}
-
-footer .logo--white {
-  font-family: 'Shrikhand', cursive;
-  font-size: 18px;
-  margin-bottom: 15px;
-  color: #ffffff;
-}
-
-footer .footer__description {
-  font-size: 14px;
-}
-
-footer .footer__description .description {
-  line-height: 22px;
-  color: #ffffff;
-}
-
-footer .footer__description .description .hands {
-  font-size: 14px;
-}
-
-footer .footer__description .description .ustensils {
-  margin-right: 5px;
-  font-size: 16px;
-}
-
+/*STYLES PAGES MENU END*/
 @media screen and (min-width: 1000px) {
   .restaurant {
     margin-bottom: 30px;
