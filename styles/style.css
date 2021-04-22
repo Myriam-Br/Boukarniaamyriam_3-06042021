@@ -29,12 +29,16 @@ body a {
   color: #000000;
 }
 
+header {
+  position: relative;
+}
+
 header .container--text {
   background-color: #f2f2f2;
   padding: 15px;
   text-align: center;
-  -webkit-box-shadow: 1px 2px 8px 2px #030303;
-          box-shadow: 1px 2px 8px 2px #030303;
+  -webkit-box-shadow: 0px 1px 8px 2px rgba(3, 3, 3, 0.2);
+          box-shadow: 0px 1px 8px 2px rgba(3, 3, 3, 0.2);
 }
 
 header .container--text .button {
@@ -45,7 +49,7 @@ header .container--text .button {
   background-color: none;
   left: 0;
   top: 0;
-  margin-top: 26px;
+  margin-top: 23px;
   margin-left: 10px;
 }
 
@@ -55,7 +59,7 @@ header .container--text .button i {
 
 header .container--text .logo--black {
   font-family: 'Shrikhand', cursive;
-  font-size: 25px;
+  font-size: 22px;
 }
 
 header .container--image {
@@ -260,6 +264,19 @@ footer .footer__description .description .ustensils {
           box-shadow: 3px 2px 8px 1px rgba(0, 0, 0, 0.2);
 }
 
+.restaurants .card__description .card::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  left: 0;
+  top: 0;
+  background-color: #ffffff;
+  width: 100%;
+  height: 80%;
+  border-radius: 14px;
+}
+
 .restaurants .card__description .card .card__image {
   height: 80%;
   width: 100%;
@@ -296,32 +313,52 @@ footer .footer__description .description .ustensils {
           box-shadow: 1px 1px 1px 0px #99E2D0;
 }
 
+.restaurants .card__description .card:hover::after {
+  opacity: 0.3;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
 .restaurants .card__description button {
-  height: 30px;
-  width: 60px;
-  border: none;
-  background-color: #ffffff;
   position: absolute;
-  right: 0;
   top: 0;
-  margin-top: 220px;
-  margin-right: 5px;
+  margin-top: 215px;
+  right: 0;
+  margin-right: 20px;
+  background-color: #ffffff;
+  height: 40px;
+  width: 50px;
+  border: none;
 }
 
-.restaurants .card__description button .on {
-  font-size: 22px;
-  margin-top: 6px;
+.restaurants .card__description button i {
+  font-size: 30px;
   position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  margin-top: 5px;
+}
+
+.restaurants .card__description button .fill {
+  height: 0px;
   color: transparent;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 
-.restaurants .card__description button .on:hover {
-  color: #9356DC;
+.restaurants .card__description button:hover .fill {
+  background: -webkit-linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: heart-fill 1s;
+          animation: heart-fill 1s;
+  height: 30px;
 }
 
-.restaurants .card__description button .off {
-  font-size: 22px;
-  margin-top: 6px;
+.restaurants .card__description button:hover .empty {
+  color: transparent;
 }
 
 /*STYLES PAGE ACCUEIL START*/
@@ -413,29 +450,47 @@ section .restaurant h2 {
 }
 
 section .restaurant button {
-  position: absolute;
+  position: relative;
+  -webkit-transform: translateY(-25px);
+          transform: translateY(-25px);
   background-color: #f0f0f0;
-  right: 0;
   margin-right: 20px;
   height: 30px;
   width: 40px;
   border: none;
+  -webkit-transition: all 1.3s;
+  transition: all 1.3s;
 }
 
 section .restaurant button i {
-  font-size: 22px;
-  margin-top: 2px;
+  font-size: 30px;
+  position: absolute;
 }
 
 section .restaurant button .fill {
-  position: absolute;
-  right: 0;
-  left: 0;
+  height: 0px;
   color: transparent;
+  -webkit-transition: all 1.3s;
+  transition: all 1.3s;
 }
 
-section .restaurant button .fill:hover {
-  color: #9356DC;
+section .restaurant button:hover {
+  -webkit-transition: all 1.3s;
+  transition: all 1.3s;
+}
+
+section .restaurant button:hover .fill {
+  background: -webkit-linear-gradient(#9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: heart-fill 1.3s;
+          animation: heart-fill 1.3s;
+  height: 30px;
+}
+
+section .restaurant button:hover .empty {
+  color: transparent;
 }
 
 section .menu {
@@ -457,7 +512,7 @@ section .menu .item h3 {
 section .menu .item .container--cards {
   margin-right: 25px;
   width: 100%;
-  /*animation des cartes au hover*/
+  /*animation des cartes apparition ouverture page*/
 }
 
 section .menu .item .container--cards .card {
@@ -466,17 +521,18 @@ section .menu .item .container--cards .card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
   border-radius: 10px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
   -webkit-box-shadow: 2px 1px 8px 2px rgba(0, 0, 0, 0.2);
           box-shadow: 2px 1px 8px 2px rgba(0, 0, 0, 0.2);
   overflow: hidden;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 
 section .menu .item .container--cards .card::after {
@@ -484,7 +540,9 @@ section .menu .item .container--cards .card::after {
   position: absolute;
   right: 0;
   opacity: 0;
-  background-color: white;
+  left: 0;
+  right: 0;
+  background-color: #ffffff;
   width: 100%;
   height: 80px;
 }
@@ -517,7 +575,7 @@ section .menu .item .container--cards .card .right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background-color: aquamarine;
+  position: relative;
   width: 35px;
   -webkit-transition: all 800ms;
   transition: all 800ms;
@@ -653,14 +711,98 @@ section .btn .commander:hover {
 }
 
 /*STYLES PAGES MENU END*/
-@media screen and (min-width: 1000px) {
-  .restaurant {
+@media screen and (min-width: 1100px) {
+  header .container .button i {
+    font-size: 28px;
+    margin-top: 4px;
+  }
+  header .container .logo--black {
+    font-size: 35px;
+  }
+  /* pages accueil sur desktop start*/
+  .localisation i {
+    font-size: 20px;
+    margin-right: 200px;
+  }
+  .localisation .city {
+    font-size: 20px;
+  }
+  .search h2 {
+    font-size: 35px;
+  }
+  .search p {
+    font-size: 19px;
+  }
+  .search button {
+    width: 350px;
+    height: 70px;
+    border-radius: 40px;
+    font-size: 24px;
+  }
+  .fonctionnement .btn__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: left;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .fonctionnement .btn__container button {
+    width: 31%;
+  }
+  .restaurants {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .restaurants .container__cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .restaurants .container__cards .card__description {
+    width: 47%;
+  }
+  /* pages menu sur desktop start*/
+  section .restaurant {
     margin-bottom: 30px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    position: relative;
+    padding-top: 0px;
+    margin-top: 0px;
   }
-  .menu {
+  section .restaurant h2 {
+    font-size: 30px;
+    margin-top: 10px;
+  }
+  section .restaurant button {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    margin-left: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 25px;
+  }
+  section .restaurant button i {
+    font-size: 40px;
+  }
+  section .restaurant button:hover .fill {
+    height: 40px;
+  }
+  section .menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -670,22 +812,90 @@ section .btn .commander:hover {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .menu .item {
-    background-color: sandybrown;
-    width: 100%;
+  section .menu .item {
+    width: 32%;
   }
-  .menu .item .container--cards .card {
-    background-color: violet;
+  section .menu .item h3 {
+    font-size: 20px;
   }
-  .menu .item .container--cards .card::after {
-    display: none;
+  section .menu .item .container--cards .card {
+    height: 100px;
   }
-  .menu .item .container--cards .card::after .right {
-    width: 80px;
+  section .menu .item .container--cards .card--dish {
+    width: 75%;
+    -webkit-transition: all 800ms;
+    transition: all 800ms;
   }
-  .menu .item .container--cards .card::after .right--checked {
+  section .menu .item .container--cards .card--dish h4 {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+  section .menu .item .container--cards .card--dish p {
+    font-size: 15px;
+  }
+  section .menu .item .container--cards .card .right {
+    width: 65px;
+  }
+  section .menu .item .container--cards .card .right--price {
+    font-size: 15px;
+    margin-top: 18px;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: all 800ms;
+    transition: all 800ms;
+  }
+  section .menu .item .container--cards .card .right--checked {
     width: 100px;
-    margin: 0px;
+    -webkit-transform: translateX(120%);
+            transform: translateX(120%);
+    -webkit-transition: all 800ms;
+    transition: all 800ms;
+  }
+  section .menu .item .container--cards .card:hover .card--dish {
+    width: 70%;
+    -webkit-transition: all 800ms;
+    transition: all 800ms;
+  }
+  section .menu .item .container--cards .card:hover .right--price {
+    margin-right: 0px;
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transition: all 800ms;
+    transition: all 800ms;
+  }
+  section .menu .item .container--cards .card:hover .right--checked {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    -webkit-transition: all 800ms;
+    transition: all 800ms;
+  }
+  section .menu .item .container--cards .card:hover .right--checked i {
+    top: 40%;
+  }
+  section .btn {
+    margin-top: 40px;
+  }
+  section .btn .commander {
+    width: 350px;
+    height: 70px;
+    border-radius: 40px;
+    font-size: 28px;
+  }
+  /* pages menu sur desktop end*/
+  footer {
+    padding-top: 15px;
+    padding-left: 20px;
+  }
+  footer .logo--white {
+    font-size: 20px;
+  }
+  footer .footer__description {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
 }
 /*# sourceMappingURL=style.css.map */

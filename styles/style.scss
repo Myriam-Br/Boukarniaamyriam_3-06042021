@@ -34,13 +34,15 @@ body{
 }
 
 header{
-    
+    position: relative;
+  
     .container{
+       
         &--text{
             background-color: #f2f2f2;
             padding:15px;
             text-align: center;
-            box-shadow: 1px 2px 8px 2px rgb(3, 3, 3);
+            box-shadow: 0px 1px 8px 2px rgba(3, 3, 3,0.2);
             .button{
                 height: 50px;
                 width: 50px;
@@ -49,7 +51,7 @@ header{
                 background-color: none;
                 left: 0;
                 top: 0;
-                margin-top: 26px;
+                margin-top: 23px;
                 margin-left: 10px;
             i{
                 font-size: 20px;
@@ -57,7 +59,7 @@ header{
         }
             .logo--black{
                 font-family: 'Shrikhand', cursive;
-                font-size: 25px;
+                font-size: 22px;
             }
         }
         &--image{
@@ -112,7 +114,6 @@ background-color: #e4e3e3;
 padding: 12px;
 color: rgb(36, 36, 36);
 text-align: center;
-
 
     i{
         font-size: 15px;
@@ -252,8 +253,23 @@ text-align: center;
             height: 230px;
             border-radius: 14px;
             padding-bottom: 20px;
-            box-shadow: 3px 2px 8px 1px rgba(0, 0, 0, 0.2);  
-                    
+            box-shadow: 3px 2px 8px 1px rgba(0, 0, 0, 0.2);
+
+            &::after{
+                content: '';
+                position: absolute;
+                right: 0;
+                opacity: 0;
+                left: 0;
+                top: 0;
+                background-color: #ffffff;
+                width: 100%;
+                height: 80%;
+                border-radius: 14px;
+               
+            }
+
+               
             .card__image{
                 height: 80%;
                 width: 100%;
@@ -286,115 +302,64 @@ text-align: center;
              
             }
         }
-        button{
-           height: 30px;
-           width: 60px;
-           border: none;
-           background-color: #ffffff;
-           position: absolute;
-           right: 0;
-           top: 0;
-           margin-top: 220px;
-           margin-right: 5px;
-           
-            .on{
-                font-size: 22px; 
-                margin-top: 6px; 
-                position: absolute;
-                color: transparent;
-                &:hover{
-                    color: $primary-color;
-                }
 
+        .card:hover{
+            &::after{
+                opacity: 0.3;
+                transition: all 500ms;
             }
-
-            .off{
-                font-size: 22px; 
-                margin-top: 6px; 
-            }
-    
         }
+        button{
+            position: absolute;    
+            top: 0;  
+            margin-top: 215px;    
+            right: 0;
+            margin-right: 20px;
+            background-color: #ffffff;
+            height: 40px;
+            width: 50px;
+            border: none;
+
+        i{
+            font-size: 30px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            margin-top: 5px;
+          
+        }
+
+        .fill{
+            height: 0px;      
+            color: transparent;    
+            transition: all 1s;   
+        }   
+    }
+
+    button:hover{
+        .fill{ 
+                background: -webkit-linear-gradient($primary-color, $secondary-color);
+                background-clip: text;
+                -webkit-background-clip: text;
+                 -webkit-text-fill-color: transparent;
+                 animation: heart-fill 1s;
+                 height: 30px;   
+    }
+
+        .empty{
+           color: transparent;
+          
+        }      
+    }
     }
 }
 /*STYLES PAGE ACCUEIL START*/
 
+
+
 /*STYLES PAGES MENU START*/
-@mixin card-style{
-    background-color: #ffffff;
-    margin-top: 18px;
-    display: flex; 
-    border-radius: 10px;
-    justify-content: space-between;
-    width: 100%;
-    height: fit-content;
-    box-shadow: 2px 1px 8px 2px rgba(0, 0, 0,0.2);
-}
 
-@mixin card-style-after{
-    content: '';
-    position: absolute;
-    right: 0;
-    opacity: 0;
-    background-color: rgb(255, 255, 255);
-    width: 100%;
-    height: 80px;
-}
-
-@mixin dish-style{
-    width: 85%;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-   
-}
-
-@mixin dish-style-title {
-    font-size: 16px;
-    margin-bottom: 5px;
-    font-weight: bold;  
-}
-@mixin dish-style-paragraph{
-    font-size: 15px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-
-}
-@mixin dish-style-paragraph-hov{
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
-@mixin right-side{
-    display: flex;  
-    background-color: aquamarine;
-      
-  
-}
-
-@mixin right-side-price{
-    font-size: 14px;
-    padding-top: 35px;
-    font-weight: bold; 
-    transition: all 800ms;           
-}
-
-@mixin right-side-check{
-    background-color: #6ddab9;
-    text-align: center;
-    
-}
-
-@mixin right-side-iconV{
-    color: #ffffff; 
-    position: absolute;
-    left: 0%;
-    right: 0%;
-    top: 32%;
-    font-size: 22px;
-    transform: rotateX(0deg);  
-}
 /* animations apparitions en cascade */
     @keyframes slide-in {
         0%{
@@ -405,17 +370,16 @@ text-align: center;
             transform: translateY(0px);
         }     
     }
-    
+   
     @keyframes fade-out {
     0%{
         opacity: 1;
     }
-  
+
     100%{
         opacity: 0;
-    }    
-  
-        
+    }
+      
     }
     @keyframes shadow-b {
         from{
@@ -443,31 +407,46 @@ section{
             font-size: 22px;
         }
         button{
-            position: absolute;
+            position: relative;
+            transform: translateY(-25px);
             background-color: #f0f0f0;
-            right: 0; 
             margin-right: 20px;
             height: 30px;
             width: 40px;
             border: none;
+            transition: all 1.3s;   
 
         i{
-            font-size: 22px;
-            margin-top: 2px;
-        }
-        .fill{
+            font-size: 30px;
             position: absolute;
-            right: 0;
-            left: 0;
-            color: transparent;
-            &:hover{
-                color: $primary-color;
-            }    
+          
         }
-       
-        }
-       
+
+        .fill{
+            height: 0px;      
+            color: transparent;    
+            transition: all 1.3s;   
+        }   
     }
+
+    button:hover{
+        transition: all 1.3s;   
+        .fill{ 
+                background: -webkit-linear-gradient($primary-color, $secondary-color);
+                background-clip: text;
+                -webkit-background-clip: text;
+                 -webkit-text-fill-color: transparent;
+                 animation: heart-fill 1.3s;
+                 height: 30px;    
+    }
+
+        .empty{
+           color: transparent;
+          
+        }      
+    }
+}
+
     .menu{
         background-color: #f0f0f0;  
         .item{
@@ -487,44 +466,80 @@ section{
                 width: 100%;
               
                 .card{
-                    @include card-style;
+                    background-color: #ffffff;
+                    margin-top: 18px;
+                    display: flex; 
+                    position: relative;
+                    border-radius: 10px;
+                    justify-content: space-between;
+                    width: 100%;    
+                    box-shadow: 2px 1px 8px 2px rgba(0, 0, 0,0.2);
                     overflow: hidden;
-                    
+                    height: fit-content;
+
                     &::after{
-                        @include card-style-after;
+                        content: '';
+                        position: absolute;
+                        right: 0;
+                        opacity: 0;
+                        left: 0;
+                        right: 0;
+                        background-color: #ffffff;
+                        width: 100%;
+                        height: 80px;
                     }
+                
                     
                     &--dish{  
-                    @include dish-style;
-                    transition: all 800ms;
+                        width: 85%;
+                        padding-left: 10px;
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                        transition: all 800ms;
                    
                         h4{
-                        @include dish-style-title;
+                            font-size: 16px;
+                            margin-bottom: 5px;
+                            font-weight: bold; 
                         }
 
                         p{  
-                        @include dish-style-paragraph;
-                        transition: all 800ms; 
+                            font-size: 15px;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            transition: all 800ms; 
                         }   
                 }
 
                     .right{
-                        @include right-side;
+                        display: flex;  
+                        position: relative;
                         width: 35px;   
                         transition: all 800ms;  
                         
                         &--price{
-                            @include right-side-price;          
+                            font-size: 14px;
+                            padding-top: 35px;
+                            font-weight: bold; 
+                            transition: all 800ms;             
                         }
 
                         &--checked{
-                            @include right-side-check; 
+                            background-color: #6ddab9;
+                            text-align: center;
                             width: 80px;  
                             transform: translateX(30px);
                             transition: all 800ms;   
                                     
                             i{
-                                @include right-side-iconV;
+                                color: #ffffff; 
+                                position: absolute;
+                                left: 0%;
+                                right: 0%;
+                                top: 32%;
+                                font-size: 22px;
+                                transform: rotateX(0deg);
                                 transition: all 800ms;
                             }
                         }      
@@ -538,8 +553,10 @@ section{
                         transition: all 800ms;
                         
                         p{
-                        @include dish-style-paragraph-hov;
-                        transition: all 800ms;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            transition: all 800ms;
                         }
                         
                     }
@@ -563,8 +580,8 @@ section{
                         }
                     }
                 }    
-                  
-                /*animation des cartes au hover*/
+                
+                /*animation des cartes apparition ouverture page*/ 
                 .first{
                     animation: slide-in 1s ease-out 50ms, shadow-b 1s ;
                     &::after{
@@ -579,51 +596,154 @@ section{
                 }
                 .third{
                     animation: slide-in 1s ease-out 250ms, shadow-b 2s ;
-                    &::after{
+                    &::after{                      
                         animation: fade-out 2s;
                     }
-                }            
+                }  
     }
-        
         }   
-      
+
       
     }
 
 /*boutton commander*/
 
- .btn{
-        text-align: center;
-        padding-top: 30px;
-        padding-bottom: 50px;
-        transition: all 800ms;
-        .commander{
-            border: none;
-            font-family: 'Roboto';
-            color: #ffffff;
-            font-size: 18px;
-            padding: 15px 60px;
-            border-radius: 30px;
-            box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.5);
-            background-image: linear-gradient(0deg, $primary-color, $secondary-color);
+    .btn{
+            text-align: center;
+            padding-top: 30px;
+            padding-bottom: 50px;
+            transition: all 800ms;
+            .commander{
+                border: none;
+                font-family: 'Roboto';
+                color: #ffffff;
+                font-size: 18px;
+                padding: 15px 60px;
+                border-radius: 30px;
+                box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.5);
+                background-image: linear-gradient(0deg, $primary-color, $secondary-color);
 
-        &:hover{
-            box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.6); 
-            background-image: linear-gradient(0deg, #9256dce7, #ff79d9e7);        
-            
-        }
-        }
+            &:hover{
+                box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.6); 
+                background-image: linear-gradient(0deg, #9256dce7, #ff79d9e7);        
+                
+            }
+            }
     }
 
 }
 /*STYLES PAGES MENU END*/
 
 
-@media screen and (min-width:1000px) {
+@media screen and (min-width:1100px) {
+
+    header{
+        
+        .container{
+
+            .button{
+                i{
+                    font-size: 28px;
+                    margin-top: 4px;
+                }
+            }
+            .logo--black{
+                font-size: 35px;
+            }
+        }
+        
+    }
+/* pages accueil sur desktop start*/
+.localisation{
+    i{
+        font-size: 20px;
+        margin-right: 200px;
+    }
+    .city{
+        font-size: 20px;
+    }
+}
+.search{
+    h2{
+        font-size: 35px;
+       
+    } 
+    p{
+        font-size: 19px;    
+        }
+    button{
+        width: 350px;
+        height: 70px;
+        border-radius: 40px;
+        font-size: 24px;
+    }
+    
+}
+
+.fonctionnement{
+ 
+    .btn__container{
+        display: flex;
+        text-align: left;
+        justify-content: space-between;
+      
+        button{
+            width: 31%;
+        }
+    }
+}
+
+.restaurants{
+    display: flex;
+    flex-direction: column;
+    
+    .container__cards{
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      .card__description{
+        width: 47%;
+    }  
+    }
+    
+}
+
+
+/* pages menu sur desktop start*/
+    section{
 
     .restaurant{
         margin-bottom: 30px;
         justify-content: center;
+        position: relative;
+        padding-top: 0px;
+        margin-top: 0px;
+        
+        h2{
+            font-size: 30px;
+            margin-top: 10px;
+        }
+        button{
+            transform: translateY(0px);
+            margin-left: 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin-right: 25px;
+
+            
+     
+            i{
+                font-size: 40px;
+            }
+            
+        }
+        button:hover{
+            .fill{
+                height: 40px;
+            }
+        }
       
     }
 
@@ -631,27 +751,73 @@ section{
         display: flex;
         flex-wrap: nowrap;
         justify-content: space-between;
-       
         .item{
-           background-color: sandybrown;
-           width: 100%;
+           width: 32%;  
+                
+           h3{
+               font-size: 20px;
+           }
+
            .container--cards{
+            
                
             .card{   
-               
-              background-color: violet;
-                &::after{
-                    display: none;
+                height: 100px;
 
+                &--dish{
+                    width: 75%;
+                    transition: all 800ms;
+                    h4{
+                        font-size: 18px;
+                        margin-bottom: 25px;
+                    }
+                    p{
+                        font-size: 15px;
+                    }
+                }
+
+              
+           
                 .right{
-                   width: 80px;
+                   width: 65px;
+                  
+                   &--price{
+                       font-size: 15px;
+                       margin-top: 18px;
+                       transform: translateX(100%);
+                       transition: all 800ms;
+                   }
                 
                     &--checked{
                         width: 100px;
-                        margin: 0px;
+                        transform: translateX(120%);
+                        transition: all 800ms;
                        
                     }
+                }
+             
+            }
+            .card:hover{
 
+                .card{
+                    &--dish{
+                        width:70%;
+                        transition: all 800ms;
+                    }
+                }
+                .right{
+                    &--price{
+                        margin-right: 0px;
+                        transform: translateX(0%);
+                        transition: all 800ms;
+                    }
+                    &--checked{
+                    transform: translateX(0%);
+                    transition: all 800ms;
+                    i{
+                        top: 40%;
+                       
+                    }
                 }
                 }
             }
@@ -659,10 +825,40 @@ section{
       
         
         }
+
+        
         
 
        
     }
+
+    .btn{
+        margin-top: 40px;
+        .commander{
+            width: 350px;
+            height: 70px;
+            border-radius: 40px;
+            font-size: 28px;
+        }
+     
+    }
+}
+/* pages menu sur desktop end*/
+
+    footer{
+        padding-top: 15px;
+        padding-left: 20px;
+
+    .logo--white{
+            font-size: 20px;
+        }
+    .footer__description{
+        display: flex;
+        justify-content: space-evenly;
+
+        
+    }
+}
 }
 
 
