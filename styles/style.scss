@@ -26,6 +26,70 @@ $tertiary-color:#99E2D0;
 
 body{
     font-family: 'Roboto';
+    @keyframes loading__spinner{
+        0%{
+            color: #f82aff;
+            opacity: 1;         
+        }
+     
+        100%{
+         color: #1e53ff;  
+         opacity: 1; 
+        }
+     }
+     
+     @keyframes spinner__rotation{
+         from{
+             transform: rotate(0deg);  
+             z-index: 4;
+         }
+         to{
+             transform: rotate(360deg);
+             z-index: 4;
+         }
+     }
+
+     @keyframes loading__screen {
+         from{
+             opacity: 1;
+             z-index: 3;
+         }
+
+         to{
+             opacity: 1;
+             z-index: 3;
+         }
+     }
+
+    
+    .load{
+        text-align: center;
+        width: 100%;
+        height: 100%;
+    .screen{
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        opacity: 0;
+        background-color: rgba(255, 255, 255,0.8);
+        z-index:-1;
+        animation: loading__screen 3s; 
+    }
+    .fa-spinner{
+        font-size: 80px;  
+        color: #ffffff;
+        opacity: 0;
+        position: fixed;
+        top: 45%;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        text-align: center;
+        animation: loading__spinner 1s 3 ease-out,  spinner__rotation 1s 3;
+    }
+}
+    
 
     a{
         text-decoration: none;
@@ -44,7 +108,7 @@ header{
             text-align: center;
             box-shadow: 0px 1px 8px 2px rgba(3, 3, 3,0.2);
             .button{
-                height: 50px;
+                height: 30px;
                 width: 50px;
                 border: none;
                 position: absolute;
@@ -163,12 +227,15 @@ text-align: center;
     }
 }
 
+
+
+
 .fonctionnement{
     padding: 30px 25px;
     padding-top: 45px;
     
     h3{
-        font-size: 27px;
+        font-size: 26px;
         font-weight: bold;
         color: black;
 
@@ -237,7 +304,7 @@ text-align: center;
     padding: 30px 25px;
 
     h3{
-      font-size: 27px;
+      font-size: 26px;
     font-weight: bold;
     color: black;  
     }
@@ -252,7 +319,7 @@ text-align: center;
             background-color: #ffffff;
             height: 230px;
             border-radius: 14px;
-            padding-bottom: 20px;
+            padding-bottom: 15px;
             box-shadow: 3px 2px 8px 1px rgba(0, 0, 0, 0.2);
 
             &::after{
@@ -271,9 +338,12 @@ text-align: center;
 
                
             .card__image{
-                height: 80%;
+                height: 75%;
                 width: 100%;
+                position: absolute;
                 object-fit: cover;
+                top: 0;
+                z-index: 1;
                 border-top-left-radius: 14px;
                 border-top-right-radius:14px ;
 
@@ -281,18 +351,24 @@ text-align: center;
             .description--resto{
                 margin: 8px;
                 margin-left: 10px;
+                position: absolute;
+                bottom: 0;
+                z-index: 2;
+               
                 h4{
-                    font-size: 18px;
+                    font-size: 17px;
                     font-weight: bold;
                 }
                 p{
                     margin-top: 2px;
+                    font-size: 15px;
                 }
             }
             .nouveau{
                 background-color: $tertiary-color;
                 position: absolute;
                 right: 0;
+                z-index: 3;
                 margin: 12px;
                 padding: 8px 15px;
                 border-radius: 2px;
@@ -306,6 +382,7 @@ text-align: center;
         .card:hover{
             &::after{
                 opacity: 0.3;
+                z-index: 4;
                 transition: all 500ms;
             }
         }
@@ -314,24 +391,25 @@ text-align: center;
             top: 0;  
             margin-top: 215px;    
             right: 0;
-            margin-right: 20px;
+            margin-right: 10px;
             background-color: #ffffff;
             height: 40px;
             width: 50px;
             border: none;
 
         i{
-            font-size: 30px;
+            font-size: 25px;
             position: absolute;
             left: 0;
             top: 0;
             right: 0;
-            margin-top: 5px;
+            margin-top: 10px;
           
         }
 
         .fill{
-            height: 0px;      
+            height: 0px;
+            transform-origin: bottom;     
             color: transparent;    
             transition: all 1s;   
         }   
@@ -344,7 +422,7 @@ text-align: center;
                 -webkit-background-clip: text;
                  -webkit-text-fill-color: transparent;
                  animation: heart-fill 1s;
-                 height: 30px;   
+                 height: 30px;
     }
 
         .empty{
@@ -352,7 +430,7 @@ text-align: center;
           
         }      
     }
-    }
+}
 }
 /*STYLES PAGE ACCUEIL START*/
 
@@ -363,7 +441,7 @@ text-align: center;
 /* animations apparitions en cascade */
     @keyframes slide-in {
         0%{
-            transform: translateY(12px);
+            transform: translateY(-10px);
         }
      
         100%{
@@ -400,50 +478,50 @@ section{
     .restaurant{
         display: flex;
         justify-content: space-between;
-        margin-top: 10px;
+        position: relative;
         
         h2{
             font-family: 'Shrikhand',cursive;
             font-size: 22px;
+
         }
         button{
-            position: relative;
-            transform: translateY(-25px);
-            background-color: #f0f0f0;
-            margin-right: 20px;
+            position: absolute;
+            background-color: transparent;
+            right: 0;
+            bottom: 0;
+            margin-bottom: 18px;
+            margin-right: 5px;
             height: 30px;
             width: 40px;
             border: none;
-            transition: all 1.3s;   
+            transition: all 1.5s;   
 
-        i{
-            font-size: 30px;
-            position: absolute;
-          
-        }
+            i{
+                font-size: 27px;
+                position: absolute;      
+            }
 
-        .fill{
-            height: 0px;      
-            color: transparent;    
-            transition: all 1.3s;   
-        }   
+            .fill{
+                height: 0px;  
+                color: transparent;          
+                transition: all 1.5s;   
+            }   
     }
 
     button:hover{
-        transition: all 1.3s;   
+        transition: all 1.5s;   
         .fill{ 
                 background: -webkit-linear-gradient($primary-color, $secondary-color);
                 background-clip: text;
                 -webkit-background-clip: text;
                  -webkit-text-fill-color: transparent;
-                 animation: heart-fill 1.3s;
-                 height: 30px;    
-    }
-
+                 animation: heart-fill 1.5s;
+                 height: 27px;    
+        }
         .empty{
-           color: transparent;
-          
-        }      
+            color: transparent;
+        }
     }
 }
 
@@ -452,9 +530,7 @@ section{
         .item{
             padding-top: 20px;
             padding-bottom: 20px;
-            
-           
-              
+                
             h3{
                 font-size: 16px;
                 width: 50px;
@@ -468,7 +544,7 @@ section{
                 .card{
                     background-color: #ffffff;
                     margin-top: 18px;
-                    display: flex; 
+                    display: flex;
                     position: relative;
                     border-radius: 10px;
                     justify-content: space-between;
@@ -484,14 +560,14 @@ section{
                         opacity: 0;
                         left: 0;
                         right: 0;
-                        background-color: #ffffff;
+                        background-color: #f0f0f0;
                         width: 100%;
                         height: 80px;
                     }
                 
                     
                     &--dish{  
-                        width: 85%;
+                        width: 100%;
                         padding-left: 10px;
                         padding-top: 10px;
                         padding-bottom: 10px;
@@ -501,35 +577,33 @@ section{
                             font-size: 16px;
                             margin-bottom: 5px;
                             font-weight: bold; 
+                        } 
+                    
+                        .infoPrice{
+                            display: flex;
+                            width: 100%;
+                            justify-content: space-between;
+                            p{  
+                                font-size: 15px;
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                transition: all 800ms; 
+                            }     
+                            .price{
+                                font-size: 14px; 
+                                margin-right: 15px;
+                                font-weight: bold; 
+                                transition: all 800ms;             
+                            }
                         }
-
-                        p{  
-                            font-size: 15px;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-                            overflow: hidden;
-                            transition: all 800ms; 
-                        }   
-                }
-
-                    .right{
-                        display: flex;  
-                        position: relative;
-                        width: 35px;   
-                        transition: all 800ms;  
-                        
-                        &--price{
-                            font-size: 14px;
-                            padding-top: 35px;
-                            font-weight: bold; 
-                            transition: all 800ms;             
-                        }
-
-                        &--checked{
+                    }
+ 
+                    .checked{
                             background-color: #6ddab9;
                             text-align: center;
-                            width: 80px;  
-                            transform: translateX(30px);
+                            transform: translateX(100%);
+                            width:0%;  
                             transition: all 800ms;   
                                     
                             i{
@@ -542,72 +616,74 @@ section{
                                 transform: rotateX(0deg);
                                 transition: all 800ms;
                             }
-                        }      
-                    }
+                    }      
+                    
                     
                 }  
                 .card:hover{
                    
                     .card--dish{
-                        width: 65%;
+                        width: 80%;
                         transition: all 800ms;
+                        .infoPrice{
                         
-                        p{
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-                            overflow: hidden;
-                            transition: all 800ms;
-                        }
-                        
+                            p{
+                                text-overflow: ellipsis;
+                                white-space: nowrap;
+                                overflow: hidden;
+                                transition: all 800ms;
+                            }
+                            .price{
+                                transition: all 800ms; 
+                                margin-right: 5px; 
+                                
+                            }
+                        }               
                     }
-                    .right{
-                        width: 90px;
-                        transition: all 800ms;   
-                        .right--price{
-                            margin-right: 15px;
-                            transition: all 800ms;   
-                        }
-                        
-                        .right--checked{
-                            transform: translateX(0px);
-                            transition: all 800ms;    
+                         
+                    .checked{
+                        width:60px; 
+                        transform: translateX(0px);
+                        transition: all 800ms;    
                                 
                             
                             i{
                                 transform: rotate(360deg);
                                 transition: all 800ms;
                             }
-                        }
-                    }
+                    }   
                 }    
                 
                 /*animation des cartes apparition ouverture page*/ 
                 .first{
-                    animation: slide-in 1s ease-out 50ms, shadow-b 1s ;
+                    animation: slide-in 1s ease-out 100ms, shadow-b 2s ;
                     &::after{
-                        animation: fade-out 1s;
+                        animation: fade-out 2s ;
                     }
                 }
                 .second{
-                    animation: slide-in 1s ease-out 200ms, shadow-b 1.5s;
+                    animation: slide-in 1s ease-out 200ms, shadow-b 2.5s;
                     &::after{
-                        animation: fade-out 1.5s;
+                        animation: fade-out 2.5s ;
                     }
                 }
                 .third{
-                    animation: slide-in 1s ease-out 250ms, shadow-b 2s ;
+                    animation: slide-in 1s ease-out 300ms, shadow-b 3s ;
                     &::after{                      
-                        animation: fade-out 2s;
+                        animation: fade-out 3s;
                     }
                 }  
-    }
-        }   
-
-      
+                .fourth{
+                    animation: slide-in 1s ease-out 350ms, shadow-b 3.5s ;
+                    &::after{                      
+                        animation: fade-out 3.5s;
+                    }
+                }  
+            }
+        }        
     }
 
 /*boutton commander*/
-
     .btn{
             text-align: center;
             padding-top: 30px;
@@ -633,119 +709,217 @@ section{
 
 }
 /*STYLES PAGES MENU END*/
-
-
-@media screen and (min-width:1100px) {
-
-    header{
-        
-        .container{
-
-            .button{
-                i{
-                    font-size: 28px;
-                    margin-top: 4px;
-                }
-            }
-            .logo--black{
-                font-size: 35px;
-            }
-        }
-        
-    }
-/* pages accueil sur desktop start*/
-.localisation{
-    i{
-        font-size: 20px;
-        margin-right: 200px;
-    }
-    .city{
-        font-size: 20px;
-    }
-}
-.search{
-    h2{
-        font-size: 35px;
-       
-    } 
-    p{
-        font-size: 19px;    
-        }
-    button{
-        width: 350px;
-        height: 70px;
-        border-radius: 40px;
-        font-size: 24px;
-    }
-    
-}
-
-.fonctionnement{
- 
-    .btn__container{
-        display: flex;
-        text-align: left;
-        justify-content: space-between;
-      
-        button{
-            width: 31%;
-        }
-    }
-}
-
-.restaurants{
-    display: flex;
-    flex-direction: column;
-    
-    .container__cards{
-
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-      .card__description{
-        width: 47%;
-    }  
-    }
-    
-}
-
-
-/* pages menu sur desktop start*/
+@media screen and (min-width:450px) {
     section{
+        .menu{ 
+            .item{
+                .container--cards{
+                    .card:hover{
+                        .card--dish{
+                            width: 90%;
+                        }  
+                    }
+                }
 
-    .restaurant{
-        margin-bottom: 30px;
-        justify-content: center;
-        position: relative;
-        padding-top: 0px;
-        margin-top: 0px;
-        
-        h2{
-            font-size: 30px;
+            }
+          
+
+        }
+       
+    }
+}
+@media screen and (min-width:750px) {
+    footer{
+        padding-top: 20px;
+        padding-left: 20px;
+        padding-bottom: 25px;
+
+    .logo--white{
+            font-size: 20px;
+            line-height: 0px;
             margin-top: 10px;
         }
-        button{
-            transform: translateY(0px);
-            margin-left: 20px;
-            position: absolute;
-            top: 0;
-            right: 0;
-            margin-right: 25px;
+    .footer__description{
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-evenly;
 
-            
-     
-            i{
-                font-size: 40px;
-            }
-            
-        }
-        button:hover{
-            .fill{
-                height: 40px;
-            }
-        }
-      
+        
     }
+}
+    
+}
+
+
+@media screen and (min-width:1000px) {
+
+    header{
+            
+            .container{
+
+                .button{
+                    i{
+                        font-size: 28px;
+                        margin-top: 4px;
+                    }
+                }
+                .logo--black{
+                    font-size: 30px;
+                }
+
+                .container--image{
+                    height: 560px;
+                    top: 0;
+                }
+            }
+            
+    }
+
+    section{
+        margin-top: 450px;
+        
+    }
+
+    /* pages accueil start*/
+    .localisation{
+        i{
+            font-size: 18px;
+            margin-right: 170px;
+        }
+        .city{
+            font-size: 18px;
+        }
+    }
+    .search{
+        h2{
+            font-size: 30px;
+        
+        } 
+        p{
+            font-size: 17px;    
+            }
+        button{
+            width: 300px;
+            height: 60px;
+            border-radius: 40px;
+            font-size: 20px;
+        }
+        
+    }
+
+    .fonctionnement{
+    
+        .btn__container{
+            display: flex;
+            text-align: left;
+            justify-content: space-between;
+        
+            button{
+                width: 31%;
+            }
+        }
+    }
+    .restaurants{
+        display: flex;
+        flex-direction: column;
+        
+        .container__cards{
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        .card__description{
+            width: 47%;
+        }  
+        }
+        
+    }
+    /* pages accueil end*/
+
+    
+    /* pages menu start*/
+    section{
+        .restaurant{
+            margin-bottom: 30px;  
+            position: relative;
+            padding-top: 0px;
+            
+            h2{
+                font-size: 30px;
+                margin-top: 10px;
+            }
+            button{
+                margin-left: 20px;
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                margin-right: 30px;
+                margin-bottom: 33px;
+                i{
+                    font-size: 35px;
+                }
+                
+            }
+            button:hover{
+                .fill{
+                    height: 35px;
+                }
+            }
+          
+        }
+        .menu{
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            .item{
+               width: 32%;  
+               h3{
+                   font-size: 18px;
+               }
+               .container--cards{
+                   .card{
+                       &--dish{
+                        width: 95%;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        transition: all 800ms;
+                        
+                        h4{
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            transition: all 800ms; 
+                        }
+                       }
+                   }
+          
+               }
+         
+        }
+    }
+        .btn{
+            margin-top: 40px;
+            text-align: center;
+            .commander{
+                padding: 0px;
+                width: 220px;
+                height: 55px;
+                border-radius: 40px;
+                font-size: 22px;
+            }
+        }
+    }
+    /* pages menu end*/
+      
+   
+}
+    
+
+@media screen and (min-width:1200px) {
+  /* pages menu sur desktop start*/
+    section{
+
 
     .menu{
         display: flex;
@@ -756,110 +930,17 @@ section{
                 
            h3{
                font-size: 20px;
-           }
-
-           .container--cards{
-            
-               
-            .card{   
-                height: 100px;
-
-                &--dish{
-                    width: 75%;
-                    transition: all 800ms;
-                    h4{
-                        font-size: 18px;
-                        margin-bottom: 25px;
-                    }
-                    p{
-                        font-size: 15px;
-                    }
-                }
-
-              
-           
-                .right{
-                   width: 65px;
-                  
-                   &--price{
-                       font-size: 15px;
-                       margin-top: 18px;
-                       transform: translateX(100%);
-                       transition: all 800ms;
-                   }
-                
-                    &--checked{
-                        width: 100px;
-                        transform: translateX(120%);
-                        transition: all 800ms;
-                       
-                    }
-                }
-             
-            }
-            .card:hover{
-
-                .card{
-                    &--dish{
-                        width:70%;
-                        transition: all 800ms;
-                    }
-                }
-                .right{
-                    &--price{
-                        margin-right: 0px;
-                        transform: translateX(0%);
-                        transition: all 800ms;
-                    }
-                    &--checked{
-                    transform: translateX(0%);
-                    transition: all 800ms;
-                    i{
-                        top: 40%;
-                       
-                    }
-                }
-                }
-            }
+           }     
         }
-      
-        
-        }
-
-        
-        
-
        
-    }
-
-    .btn{
-        margin-top: 40px;
-        .commander{
-            width: 350px;
-            height: 70px;
-            border-radius: 40px;
-            font-size: 28px;
-        }
-     
-    }
+    }  
 }
-/* pages menu sur desktop end*/
-
-    footer{
-        padding-top: 15px;
-        padding-left: 20px;
-
-    .logo--white{
-            font-size: 20px;
-        }
-    .footer__description{
-        display: flex;
-        justify-content: space-evenly;
-
-        
-    }
+  /* pages menu sur desktop end*/  
 }
-}
+    
+
+
+
 
 
 
