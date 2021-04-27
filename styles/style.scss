@@ -77,7 +77,7 @@ body{
         animation: loading__screen 3s; 
     }
     .fa-spinner{
-        font-size: 80px;  
+        font-size: 55px;  
         color: #ffffff;
         opacity: 0;
         position: fixed;
@@ -368,7 +368,7 @@ text-align: center;
                 background-color: $tertiary-color;
                 position: absolute;
                 right: 0;
-                z-index: 3;
+                z-index: 2;
                 margin: 12px;
                 padding: 8px 15px;
                 border-radius: 2px;
@@ -396,6 +396,7 @@ text-align: center;
             height: 40px;
             width: 50px;
             border: none;
+            transition: all 1.5s; 
 
         i{
             font-size: 25px;
@@ -411,7 +412,7 @@ text-align: center;
             height: 0px;
             transform-origin: bottom;     
             color: transparent;    
-            transition: all 1s;   
+            transition: all 1.5s;   
         }   
     }
 
@@ -421,7 +422,7 @@ text-align: center;
                 background-clip: text;
                 -webkit-background-clip: text;
                  -webkit-text-fill-color: transparent;
-                 animation: heart-fill 1s;
+                 animation: heart-fill 1.5s;
                  height: 30px;
     }
 
@@ -441,7 +442,7 @@ text-align: center;
 /* animations apparitions en cascade */
     @keyframes slide-in {
         0%{
-            transform: translateY(-10px);
+            transform: translateY(-15px);
         }
      
         100%{
@@ -656,27 +657,27 @@ section{
                 
                 /*animation des cartes apparition ouverture page*/ 
                 .first{
-                    animation: slide-in 1s ease-out 100ms, shadow-b 2s ;
+                    animation: slide-in 1s ease-out 100ms, shadow-b 1s ;
                     &::after{
                         animation: fade-out 2s ;
                     }
                 }
                 .second{
-                    animation: slide-in 1s ease-out 200ms, shadow-b 2.5s;
+                    animation: slide-in 1s ease-out 250ms, shadow-b 1.5s;
                     &::after{
                         animation: fade-out 2.5s ;
                     }
                 }
                 .third{
-                    animation: slide-in 1s ease-out 300ms, shadow-b 3s ;
+                    animation: slide-in 1s ease-out 300ms, shadow-b 2s ;
                     &::after{                      
-                        animation: fade-out 3s;
+                        animation: fade-out 3s ;
                     }
                 }  
                 .fourth{
-                    animation: slide-in 1s ease-out 350ms, shadow-b 3.5s ;
+                    animation: slide-in 1s ease-out 350ms, shadow-b 2.5s ;
                     &::after{                      
-                        animation: fade-out 3.5s;
+                        animation: fade-out 3.5s ;
                     }
                 }  
             }
@@ -729,10 +730,15 @@ section{
     }
 }
 @media screen and (min-width:750px) {
+    .load{
+        .fa-spinner{
+            font-size: 80px;
+        }
+    }
     footer{
         padding-top: 20px;
         padding-left: 20px;
-        padding-bottom: 25px;
+        padding-bottom: 30px;
 
     .logo--white{
             font-size: 20px;
@@ -740,7 +746,7 @@ section{
             margin-top: 10px;
         }
     .footer__description{
-        margin-top: 10px;
+        margin-top: 25px;
         display: flex;
         justify-content: space-evenly;
 
@@ -775,10 +781,6 @@ section{
             
     }
 
-    section{
-        margin-top: 450px;
-        
-    }
 
     /* pages accueil start*/
     .localisation{
@@ -839,6 +841,7 @@ section{
     
     /* pages menu start*/
     section{
+        margin-top: 450px;
         .restaurant{
             margin-bottom: 30px;  
             position: relative;
