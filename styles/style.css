@@ -166,7 +166,6 @@ header .container--text .logo--black {
 
 header .container--image {
   height: 250px;
-  background-color: aqua;
   position: absolute;
   z-index: -1;
 }
