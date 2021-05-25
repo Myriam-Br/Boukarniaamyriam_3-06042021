@@ -97,11 +97,8 @@ body{
     }
 }
 
-header{
-    position: relative;
-  
     .container{
-       
+       position: relative;
         &--text{
             background-color: #f2f2f2;
             padding:15px;
@@ -140,7 +137,7 @@ header{
             }
         }
     }
-}
+
 footer{
     background-color: rgb(49, 49, 49);
     padding: 20px;
@@ -752,28 +749,26 @@ text-align: center;
 
 
 @media screen and (min-width:1024px) {
+ 
+    .container{
 
-    header{
-            
-            .container{
-
-                .button{
-                    i{
-                        font-size: 28px;
-                        margin-top: 4px;
-                    }
-                }
-                .logo--black{
-                    font-size: 30px;
-                }
-
-                .container--image{
-                    height: 560px;
-                    top: 0;
-                }
+        .button{
+            i{
+                font-size: 28px;
+                margin-top: 4px;
             }
-            
+        }
+        .logo--black{
+            font-size: 30px;
+        }
+
+        .container--image{
+            height: 560px;
+            top: 0;
+        }
     }
+            
+  
 
 
     /* pages accueil start*/
