@@ -1,6 +1,6 @@
 /*css-reset*/
 html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+h1, h2, h3, h3, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var,
@@ -148,7 +148,7 @@ header .container--text .button {
   width: 50px;
   border: none;
   position: absolute;
-  background-color: none;
+  background-color: transparent;
   left: 0;
   top: 0;
   margin-top: 23px;
@@ -166,6 +166,7 @@ header .container--text .logo--black {
 
 header .container--image {
   height: 250px;
+  width: 100%;
   position: absolute;
   z-index: -1;
 }
@@ -189,20 +190,20 @@ footer .logo--white {
   color: #ffffff;
 }
 
-footer .footer__description {
+footer .description {
   font-size: 14px;
-}
-
-footer .footer__description .description {
   line-height: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   color: #ffffff;
 }
 
-footer .footer__description .description .hands {
+footer .description .hands {
   font-size: 14px;
 }
 
-footer .footer__description .description .ustensils {
+footer .description .ustensils {
   margin-right: 5px;
   font-size: 16px;
 }
@@ -225,7 +226,6 @@ footer .footer__description .description .ustensils {
 }
 
 .localisation .city {
-  margin-top: 50px;
   font-size: 16px;
   font-weight: bold;
 }
@@ -273,7 +273,7 @@ footer .footer__description .description .ustensils {
   padding-top: 45px;
 }
 
-.fonctionnement h3 {
+.fonctionnement h2 {
   font-size: 26px;
   font-weight: bold;
   color: black;
@@ -330,11 +330,11 @@ footer .footer__description .description .ustensils {
   margin-left: 30px;
 }
 
-.fonctionnement .btn__container button:hover {
+.fonctionnement .btn__container button:focus {
   background-color: #eee0ff;
 }
 
-.fonctionnement .btn__container button:hover i {
+.fonctionnement .btn__container button:focus i {
   color: #9356DC;
 }
 
@@ -343,7 +343,7 @@ footer .footer__description .description .ustensils {
   padding: 30px 25px;
 }
 
-.restaurants h3 {
+.restaurants h2 {
   font-size: 26px;
   font-weight: bold;
   color: black;
@@ -398,7 +398,7 @@ footer .footer__description .description .ustensils {
   z-index: 2;
 }
 
-.restaurants .card__description .card .description--resto h4 {
+.restaurants .card__description .card .description--resto h3 {
   font-size: 17px;
   font-weight: bold;
 }
@@ -461,7 +461,7 @@ footer .footer__description .description .ustensils {
   transition: all 1.5s;
 }
 
-.restaurants .card__description button:hover .fill {
+.restaurants .card__description button:focus .fill {
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
   -webkit-background-clip: text;
@@ -471,7 +471,7 @@ footer .footer__description .description .ustensils {
   height: 30px;
 }
 
-.restaurants .card__description button:hover .empty {
+.restaurants .card__description button:focus .empty {
   color: transparent;
 }
 
@@ -539,7 +539,7 @@ footer .footer__description .description .ustensils {
   }
 }
 
-section {
+.grey--container {
   padding: 25px 20px;
   background-color: #f0f0f0;
   border-top-left-radius: 35px;
@@ -548,7 +548,7 @@ section {
   /*boutton commander*/
 }
 
-section .restaurant {
+.grey--container .restaurant {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -558,12 +558,12 @@ section .restaurant {
   position: relative;
 }
 
-section .restaurant h2 {
+.grey--container .restaurant h2 {
   font-family: 'Shrikhand',cursive;
   font-size: 22px;
 }
 
-section .restaurant button {
+.grey--container .restaurant button {
   position: absolute;
   background-color: transparent;
   right: 0;
@@ -577,60 +577,55 @@ section .restaurant button {
   transition: all 1.5s;
 }
 
-section .restaurant button i {
+.grey--container .restaurant button i {
   font-size: 27px;
   position: absolute;
 }
 
-section .restaurant button .fill {
+.grey--container .restaurant button .fill {
   height: 0px;
   color: transparent;
   -webkit-transition: all 1.5s;
   transition: all 1.5s;
 }
 
-section .restaurant button:hover {
-  -webkit-transition: all 1.5s;
-  transition: all 1.5s;
-}
-
-section .restaurant button:hover .fill {
+.grey--container .restaurant button:focus .fill {
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-animation: heart-fill 1.5s;
           animation: heart-fill 1.5s;
-  height: 27px;
+  height: 30px;
 }
 
-section .restaurant button:hover .empty {
+.grey--container .restaurant button:focus .empty {
   color: transparent;
 }
 
-section .menu {
+.grey--container .menu {
   background-color: #f0f0f0;
 }
 
-section .menu .item {
+.grey--container .menu .item {
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
-section .menu .item h3 {
+.grey--container .menu .item h2 {
   font-size: 16px;
   width: 50px;
   padding-bottom: 2px;
   border-bottom: #6ddab9 solid 2px;
 }
 
-section .menu .item .container--cards {
+.grey--container .menu .item .container--cards {
   margin-right: 25px;
   width: 100%;
   /*animation des cartes apparition ouverture page*/
 }
 
-section .menu .item .container--cards .card {
+.grey--container .menu .item .container--cards .card {
   background-color: #ffffff;
   margin-top: 18px;
   display: -webkit-box;
@@ -650,7 +645,7 @@ section .menu .item .container--cards .card {
   height: fit-content;
 }
 
-section .menu .item .container--cards .card::after {
+.grey--container .menu .item .container--cards .card::after {
   content: '';
   position: absolute;
   right: 0;
@@ -662,7 +657,7 @@ section .menu .item .container--cards .card::after {
   height: 80px;
 }
 
-section .menu .item .container--cards .card--dish {
+.grey--container .menu .item .container--cards .card--dish {
   width: 100%;
   padding-left: 10px;
   padding-top: 10px;
@@ -671,13 +666,13 @@ section .menu .item .container--cards .card--dish {
   transition: all 800ms;
 }
 
-section .menu .item .container--cards .card--dish h4 {
+.grey--container .menu .item .container--cards .card--dish h3 {
   font-size: 16px;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-section .menu .item .container--cards .card--dish .infoPrice {
+.grey--container .menu .item .container--cards .card--dish .infoPrice {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -687,7 +682,7 @@ section .menu .item .container--cards .card--dish .infoPrice {
           justify-content: space-between;
 }
 
-section .menu .item .container--cards .card--dish .infoPrice p {
+.grey--container .menu .item .container--cards .card--dish .infoPrice p {
   font-size: 15px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -696,7 +691,7 @@ section .menu .item .container--cards .card--dish .infoPrice p {
   transition: all 800ms;
 }
 
-section .menu .item .container--cards .card--dish .infoPrice .price {
+.grey--container .menu .item .container--cards .card--dish .infoPrice .price {
   font-size: 14px;
   margin-right: 15px;
   font-weight: bold;
@@ -704,7 +699,7 @@ section .menu .item .container--cards .card--dish .infoPrice .price {
   transition: all 800ms;
 }
 
-section .menu .item .container--cards .card .checked {
+.grey--container .menu .item .container--cards .card .checked {
   background-color: #6ddab9;
   text-align: center;
   -webkit-transform: translateX(100%);
@@ -714,7 +709,7 @@ section .menu .item .container--cards .card .checked {
   transition: all 800ms;
 }
 
-section .menu .item .container--cards .card .checked i {
+.grey--container .menu .item .container--cards .card .checked i {
   color: #ffffff;
   position: absolute;
   left: 0%;
@@ -727,13 +722,13 @@ section .menu .item .container--cards .card .checked i {
   transition: all 800ms;
 }
 
-section .menu .item .container--cards .card:hover .card--dish {
+.grey--container .menu .item .container--cards .card:focus .card--dish {
   width: 80%;
   -webkit-transition: all 800ms;
   transition: all 800ms;
 }
 
-section .menu .item .container--cards .card:hover .card--dish .infoPrice p {
+.grey--container .menu .item .container--cards .card:focus .card--dish .infoPrice p {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -741,13 +736,13 @@ section .menu .item .container--cards .card:hover .card--dish .infoPrice p {
   transition: all 800ms;
 }
 
-section .menu .item .container--cards .card:hover .card--dish .infoPrice .price {
+.grey--container .menu .item .container--cards .card:focus .card--dish .infoPrice .price {
   -webkit-transition: all 800ms;
   transition: all 800ms;
   margin-right: 5px;
 }
 
-section .menu .item .container--cards .card:hover .checked {
+.grey--container .menu .item .container--cards .card:focus .checked {
   width: 60px;
   -webkit-transform: translateX(0px);
           transform: translateX(0px);
@@ -755,63 +750,64 @@ section .menu .item .container--cards .card:hover .checked {
   transition: all 800ms;
 }
 
-section .menu .item .container--cards .card:hover .checked i {
+.grey--container .menu .item .container--cards .card:focus .checked i {
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
   -webkit-transition: all 800ms;
   transition: all 800ms;
 }
 
-section .menu .item .container--cards .first {
+.grey--container .menu .item .container--cards .first {
   -webkit-animation: slide-in 1s ease-out 100ms, shadow-b 1s;
           animation: slide-in 1s ease-out 100ms, shadow-b 1s;
 }
 
-section .menu .item .container--cards .first::after {
+.grey--container .menu .item .container--cards .first::after {
   -webkit-animation: fade-out 2s;
           animation: fade-out 2s;
 }
 
-section .menu .item .container--cards .second {
+.grey--container .menu .item .container--cards .second {
   -webkit-animation: slide-in 1s ease-out 250ms, shadow-b 1.5s;
           animation: slide-in 1s ease-out 250ms, shadow-b 1.5s;
 }
 
-section .menu .item .container--cards .second::after {
+.grey--container .menu .item .container--cards .second::after {
   -webkit-animation: fade-out 2.5s;
           animation: fade-out 2.5s;
 }
 
-section .menu .item .container--cards .third {
+.grey--container .menu .item .container--cards .third {
   -webkit-animation: slide-in 1s ease-out 300ms, shadow-b 2s;
           animation: slide-in 1s ease-out 300ms, shadow-b 2s;
 }
 
-section .menu .item .container--cards .third::after {
+.grey--container .menu .item .container--cards .third::after {
   -webkit-animation: fade-out 3s;
           animation: fade-out 3s;
 }
 
-section .menu .item .container--cards .fourth {
+.grey--container .menu .item .container--cards .fourth {
   -webkit-animation: slide-in 1s ease-out 350ms, shadow-b 2.5s;
           animation: slide-in 1s ease-out 350ms, shadow-b 2.5s;
 }
 
-section .menu .item .container--cards .fourth::after {
+.grey--container .menu .item .container--cards .fourth::after {
   -webkit-animation: fade-out 3.5s;
           animation: fade-out 3.5s;
 }
 
-section .btn {
+.grey--container .btn {
   text-align: center;
+  width: 100%;
   padding-top: 30px;
   padding-bottom: 50px;
+  border: none;
   -webkit-transition: all 800ms;
   transition: all 800ms;
 }
 
-section .btn .commander {
-  border: none;
+.grey--container .btn .commander {
   font-family: 'Roboto';
   color: #ffffff;
   font-size: 18px;
@@ -823,7 +819,7 @@ section .btn .commander {
   background-image: linear-gradient(0deg, #9356DC, #FF79DA);
 }
 
-section .btn .commander:hover {
+.grey--container .btn .commander:hover {
   -webkit-box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.6);
           box-shadow: 2px 4px 8px 0px rgba(0, 0, 0, 0.6);
   background-image: -webkit-gradient(linear, left bottom, left top, from(#9256dce7), to(#ff79d9e7));
@@ -832,7 +828,7 @@ section .btn .commander:hover {
 
 /*STYLES PAGES MENU END*/
 @media screen and (min-width: 450px) {
-  section .menu .item .container--cards .card:hover .card--dish {
+  .grey--container .menu .item .container--cards .card:focus .card--dish {
     width: 90%;
   }
 }
@@ -842,9 +838,13 @@ section .btn .commander:hover {
     font-size: 80px;
   }
   footer {
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-bottom: 30px;
+    padding: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   footer .logo--white {
     font-size: 20px;
@@ -853,16 +853,10 @@ section .btn .commander:hover {
   }
   footer .footer__description {
     margin-top: 25px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
   }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1024px) {
   header .container .button i {
     font-size: 28px;
     margin-top: 4px;
@@ -930,19 +924,16 @@ section .btn .commander:hover {
   }
   /* pages accueil end*/
   /* pages menu start*/
-  section {
-    margin-top: 450px;
-  }
-  section .restaurant {
+  .grey--container .restaurant {
     margin-bottom: 30px;
     position: relative;
     padding-top: 0px;
   }
-  section .restaurant h2 {
+  .grey--container .restaurant h2 {
     font-size: 30px;
     margin-top: 10px;
   }
-  section .restaurant button {
+  .grey--container .restaurant button {
     margin-left: 20px;
     position: absolute;
     bottom: 0;
@@ -950,13 +941,13 @@ section .btn .commander:hover {
     margin-right: 30px;
     margin-bottom: 33px;
   }
-  section .restaurant button i {
+  .grey--container .restaurant button i {
     font-size: 35px;
   }
-  section .restaurant button:hover .fill {
+  .grey--container .restaurant button:focus .fill {
     height: 35px;
   }
-  section .menu {
+  .grey--container .menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -966,13 +957,13 @@ section .btn .commander:hover {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  section .menu .item {
+  .grey--container .menu .item {
     width: 32%;
   }
-  section .menu .item h3 {
+  .grey--container .menu .item h2 {
     font-size: 18px;
   }
-  section .menu .item .container--cards .card--dish {
+  .grey--container .menu .item .container--cards .card--dish {
     width: 95%;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -980,19 +971,19 @@ section .btn .commander:hover {
     -webkit-transition: all 800ms;
     transition: all 800ms;
   }
-  section .menu .item .container--cards .card--dish h4 {
+  .grey--container .menu .item .container--cards .card--dish h3 {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     -webkit-transition: all 800ms;
     transition: all 800ms;
   }
-  section .btn {
+  .grey--container .btn {
     margin-top: 40px;
     text-align: center;
   }
-  section .btn .commander {
-    padding: 0px;
+  .grey--container .btn .commander {
+    padding: 20px 30px;
     width: 220px;
     height: 55px;
     border-radius: 40px;
@@ -1003,7 +994,19 @@ section .btn .commander:hover {
 
 @media screen and (min-width: 1200px) {
   /* pages menu sur desktop start*/
-  section .menu {
+  .fonctionnement .btn__container button:hover {
+    background-color: #eee0ff;
+  }
+  .fonctionnement .btn__container button:hover i {
+    color: #9356DC;
+  }
+  .fonctionnement .btn__container button:focus {
+    background-color: #f2f2f2;
+  }
+  .fonctionnement .btn__container button:focus i {
+    color: #727272;
+  }
+  .grey--container .menu {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1013,10 +1016,10 @@ section .btn .commander:hover {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  section .menu .item {
+  .grey--container .menu .item {
     width: 32%;
   }
-  section .menu .item h3 {
+  .grey--container .menu .item h2 {
     font-size: 20px;
   }
   /* pages menu sur desktop end*/

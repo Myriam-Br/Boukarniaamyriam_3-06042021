@@ -7,45 +7,36 @@
     <title>Ohmyfood/Accueil</title>
         <link rel="stylesheet" href="./styles/style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/7e4732a8a2.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="container--text">
-                <span class="logo--black">ohmyfood</span>
-            </div>
-        </div>
-</header>          
 
-            <div class="localisation">
-                <i class="fas fa-map-marker-alt"></i>
-                <span class="city">Paris, Belleville</span>
-            </div>
-      
+    <header class="container">
+            <section class="container--text">
+                <h1 class="logo--black">ohmyfood</h1>
+            </section>
+    </header>          
 
-    
+    <div class="localisation">
+        <i class="fas fa-map-marker-alt"></i>
+        <p class="city">Paris, Belleville</p>
+    </div>
 
-    <div class="search">
+    <section class="search">
         <h2>Réservez le menu qui vous convient</h2>
         <p>Découvrez des restaurants d'exception sélectionnés par nos soins.</p>
         <button type="button">Explorez nos restaurants</button>
-    </div>
+    </section>
 
-    <div class="load">
-
-        <div class="screen"></div>
+    <aside class="load">
+        <p class="screen"></p>
         <i class="fas fa-spinner"></i>
-    </div>
+    </aside>
 
-
-    <div class="fonctionnement">
-        <h3>Fonctionnement</h3>
+    <section class="fonctionnement">
+        <h2>Fonctionnement</h2>
         <div class="btn__container">
             <button>
                 <span class="number">1</span>
@@ -64,23 +55,23 @@
                 <span class="step third" >Dégustez au restaurant</span>
             </button>
         </div>
-    </div>
-    <div class="restaurants">
-        <h3>Restaurants</h3>
+    </section>
+    
+    <section class="restaurants">
+        <h2>Restaurants</h2>
             <div class="container__cards">
-
                 <div class="card__description">
                         <a href="indexM1.html" >
                             <div class="card">
                                 <img class="card__image" src="Maquettes/images/restaurants/lapalettedugout.jpg" alt="#">
-                                <span class="nouveau">Nouveau</span>
+                                <p class="nouveau">Nouveau</p>
                                 <div class="description--resto">
-                                        <h4>La palette du goût</h4>
+                                        <h3>La palette du goût</h3>
                                         <p>Ménilmontant</p>
                                 </div>      
                             </div>
                         </a>  
-                        <button>
+                        <button type="button">
                             <i class="far fa-heart empty"></i>
                             <i class="fas fa-heart fill"></i>
                         </button>
@@ -89,14 +80,14 @@
                         <a href="indexM2.html" >
                             <div class="card">
                                 <img class="card__image" src="Maquettes/images/restaurants/lanotenechantée.jpg" alt="#">
-                                <span class="nouveau">Nouveau</span>
+                                <p class="nouveau">Nouveau</p>
                                 <div class="description--resto">
-                                        <h4>La note enchantée</h4>
+                                        <h3>La note enchantée</h3>
                                         <p>Charonne</p>
                                 </div>      
                             </div>
                         </a>  
-                        <button>
+                        <button type="button">
                             <i class="far fa-heart empty"></i>
                             <i class="fas fa-heart fill"></i>
                         </button>
@@ -106,12 +97,12 @@
                             <div class="card">
                                 <img class="card__image" src="Maquettes/images/restaurants/àlafrançaise.jpg" alt="#">
                                 <div class="description--resto">
-                                        <h4>A la française</h4>
+                                        <h3>A la française</h3>
                                         <p>Cité Rouge</p>
                                 </div>      
                             </div>
                         </a>  
-                        <button>
+                        <button type="button">
                             <i class="far fa-heart empty"></i>
                             <i class="fas fa-heart fill"></i>
                         </button>
@@ -122,50 +113,36 @@
                                 <img class="card__image" src="Maquettes/images/restaurants/ledelicedessens.jpg" alt="#">
                                 
                                 <div class="description--resto">
-                                        <h4>Le délice des sens</h4>
+                                        <h3>Le délice des sens</h3>
                                         <p>Folie-Méricourt</p>
                                 </div>      
                             </div>
                         </a>  
-                        <button>
+                        <button type="button">
                             <i class="far fa-heart empty"></i>
                             <i class="fas fa-heart fill"></i>
                         </button>
                 </div>   
             </div>         
         
-    </div>
-
-
-  
-    
-   
-
-
+    </section>
 
     <footer>
-        <div class="logo--white"><span>ohmyfood</span></div>
-        <div class="footer__description">
-            <a href="#">
-                <div class="description item1">
-                    <i class="fas fa-utensils ustensils"></i>
-                    <span>Proposer un restaurant</span>
-                </div>
-            </a>
-            <a href="">
-                <div class="description item2">
-                    <i class="fas fa-hands-helping hands"></i>
-                    <span>Devenir partenaire</span>
-                </div>
-            </a>
-            <a href="">
-                <div class="description item3">Mentions légales</div>
-            </a>
-            <a href="mailto:contact@ohmyfood.com">
-                <div class="description item4">Contact</div>
-            </a>    
-        </div>
+        <h2 class="logo--white">ohmyfood</h2>
+        <a href="#/" class="description item1">
+            <i class="fas fa-utensils ustensils"></i>
+            <p>Proposer un restaurant</p>
+        </a>
+        <a href="#/" class="description item2">
+            <i class="fas fa-hands-helping hands"></i>
+            <p>Devenir partenaire</p>
+        </a>
+        <a href="#/">
+            <p class="description item3">Mentions légales</p>
+        </a>
+        <a href="mailto:contact@ohmyfood.com">
+            <p class="description item4">Contact</p>
+        </a>
     </footer>
-    
 </body>
 </html>
