@@ -391,39 +391,39 @@ text-align: center;
             border: none;
             transition: all 1.5s; 
 
-        i{
-            font-size: 25px;
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: 0;
-            margin-top: 10px;
-          
+            i{
+                font-size: 25px;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                margin-top: 10px;
+            
+            }
+
+            .fill{
+                height: 0px;
+                transform-origin: bottom;     
+                color: transparent;    
+                transition: all 1.5s;   
+            }   
+         }
+
+        button:focus{
+            .fill{ 
+                    background: -webkit-linear-gradient($primary-color, $secondary-color);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    animation: heart-fill 1.5s;
+                    height: 30px;
+                    
         }
-
-        .fill{
-            height: 0px;
-            transform-origin: bottom;     
-            color: transparent;    
-            transition: all 1.5s;   
-        }   
-    }
-
-    button:focus{
-        .fill{ 
-                background: -webkit-linear-gradient($primary-color, $secondary-color);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                 animation: heart-fill 1.5s;
-                 height: 30px;
-                 
-    }
-        .empty{
-           color: transparent;
-          
-        }      
-    }
-}
+            .empty{
+            color: transparent;
+            
+            }      
+        }
+   }
 }
 /*STYLES PAGE ACCUEIL START*/
 
@@ -503,16 +503,15 @@ text-align: center;
 
     button:focus{
         .fill{ 
-                background: -webkit-linear-gradient($primary-color, $secondary-color);
-                -webkit-background-clip: text;
-                 -webkit-text-fill-color: transparent;
-                 animation: heart-fill 1.5s;
-                 height: 30px;
+            background: -webkit-linear-gradient($primary-color, $secondary-color);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: heart-fill 1.5s;
+            height: 30px;
         }
 
         .empty{
            color: transparent;
-          
             }      
         }
     }
