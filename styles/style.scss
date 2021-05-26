@@ -418,7 +418,6 @@ text-align: center;
                  height: 30px;
                  
     }
-
         .empty{
            color: transparent;
           
@@ -505,7 +504,6 @@ text-align: center;
     button:focus{
         .fill{ 
                 background: -webkit-linear-gradient($primary-color, $secondary-color);
-                background-clip: text;
                 -webkit-background-clip: text;
                  -webkit-text-fill-color: transparent;
                  animation: heart-fill 1.5s;
