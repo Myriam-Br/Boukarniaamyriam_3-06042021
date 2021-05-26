@@ -463,7 +463,6 @@ footer .description .ustensils {
 
 .restaurants .card__description button:focus .fill {
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-animation: heart-fill 1.5s;
@@ -591,7 +590,6 @@ footer .description .ustensils {
 
 .grey--container .restaurant button:focus .fill {
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-animation: heart-fill 1.5s;
